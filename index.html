@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tất cả liên kết quan trọng của bạn ở một nơi." />
+    <title>Trang cá nhân</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+
+      <section class="profile-card" aria-label="Trang cá nhân">
+        <button class="share-button" id="shareButton" type="button" aria-label="Chia sẻ trang">
+          <span>•••</span>
+        </button>
+
+        <div class="avatar-wrap" id="avatarWrap"></div>
+
+        <div class="identity">
+          <p class="eyebrow">PROFILE</p>
+          <h1 id="profileName"></h1>
+          <p class="handle" id="profileHandle"></p>
+          <p class="bio" id="profileBio"></p>
+        </div>
+
+        <div class="social-row" id="socialRow" aria-label="Mạng xã hội"></div>
+        <div class="link-list" id="linkList"></div>
+
+        <footer>
+          <span class="footer-mark">D</span>
+          <span id="footerText"></span>
+        </footer>
+      </section>
+    </main>
+
+    <script src="profile.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
