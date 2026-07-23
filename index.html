@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tất cả liên kết quan trọng của bạn ở một nơi." />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#eef6ff" />
+    <title>Trang cá nhân</title>
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("dtinh-theme");
+          const systemDark = matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.dataset.theme =
+            savedTheme === "light" || savedTheme === "dark"
+              ? savedTheme
+              : systemDark
+                ? "dark"
+                : "light";
+        } catch {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="preview.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+
+      <section class="profile-card" aria-label="Trang cá nhân">
+        <div class="card-actions">
+          <button class="icon-button theme-button" id="themeButton" type="button">
+            <span class="theme-icon" aria-hidden="true"></span>
+          </button>
+          <button class="icon-button share-button" id="shareButton" type="button" aria-label="Chia sẻ trang">
+            <span>•••</span>
+          </button>
+        </div>
+
+        <div class="profile-header">
+          <div class="avatar-wrap" id="avatarWrap"></div>
+
+          <div class="identity">
+            <h1 id="profileName"></h1>
+            <p class="handle" id="profileHandle"></p>
+            <p class="bio" id="profileBio"></p>
+          </div>
+        </div>
+
+        <div class="social-row" id="socialRow" aria-label="Mạng xã hội"></div>
+        <div class="link-list" id="linkList"></div>
+
+        <footer>
+          <img class="footer-mark" src="avt.jpeg" alt="DTINH" />
+          <span id="footerText"></span>
+        </footer>
+      </section>
+    </main>
+
+    <script src="profile.js"></script>
+    <script src="script.js"></script>
+    <script src="preview.js"></script>
+  </body>
+</html>
