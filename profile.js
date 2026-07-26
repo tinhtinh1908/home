@@ -103,7 +103,7 @@ window.PROFILE = {
     },
     {
       id: "mtz-tool",
-      title: "MTZ Tool (Shizuku)",
+      title: "MTZ Tool (Non Root)",
       subtitle: "Update 27/07/2026",
       icon: "mtz",
       url: githubReleaseUrl(
