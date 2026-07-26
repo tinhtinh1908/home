@@ -87,6 +87,34 @@ window.PROFILE = {
       download: true,
       previewFolder: "lichpr",
     },
+    {
+      id: "mtz-toolr",
+      title: "MTZ Tool (Root)",
+      subtitle: "Update 27/07/2026",
+      icon: "mtz",
+      url: githubReleaseUrl(
+        "tinhtinh1908",
+        "MTZ-TOOL",
+        "download",
+        "MTZ-Tool-Root-1.0.0-Release.apk"
+      ),
+      download: true,
+      previewFolder: "mtztoolr",
+    },
+    {
+      id: "mtz-tool",
+      title: "MTZ Tool (Shizuku)",
+      subtitle: "Update 27/07/2026",
+      icon: "mtz",
+      url: githubReleaseUrl(
+        "tinhtinh1908",
+        "MTZ-TOOL",
+        "download",
+        "MTZ-Tool-NonRoot-1.0.0-Release.apk"
+      ),
+      download: true,
+      previewFolder: "mtztool",
+    },
   ],
   footer: "Copyright © 2026 DTINH. All rights reserved."
 };

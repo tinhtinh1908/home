@@ -10,7 +10,8 @@ const iconLabels = {
   zalo: "icon/zalo.png",
   lich: "icon/lich.png",
   email: "@",
-  download: "↓"
+  download: "↓",
+  mtz: "icon/mtz.png",
 };
 
 const escapeText = (value) => String(value ?? "");
