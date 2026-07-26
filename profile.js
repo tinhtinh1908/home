@@ -34,13 +34,13 @@ window.PROFILE = {
     {
       id: "theme-hyperos-dark",
       title: "Theme Việt hóa (dark)",
-      subtitle: "Update 23/07/2026",
+      subtitle: "Update 27/07/2026",
       icon: "theme",
       url: githubReleaseUrl(
         "tinhtinh1908",
         "Theme-Hyper-OS-3-viethoa",
         "download",
-        "DarkBlue.mtz"
+        "Dark.mtz"
       ),
       download: true,
       previewFolder: "themedark",
@@ -48,13 +48,13 @@ window.PROFILE = {
     {
       id: "theme-hyperos-light",
       title: "Theme Việt hóa (light)",
-      subtitle: "Update 23/07/2026",
+      subtitle: "Update 27/07/2026",
       icon: "theme",
       url: githubReleaseUrl(
         "tinhtinh1908",
         "Theme-Hyper-OS-3-viethoa",
         "download",
-        "LightBlue.mtz"
+        "Light.mtz"
       ),
       download: true,
       previewFolder: "themelight",
