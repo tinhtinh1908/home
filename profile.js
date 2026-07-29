@@ -34,7 +34,7 @@ window.PROFILE = {
     {
       id: "theme-hyperos-dark",
       title: "Theme Việt hóa (dark)",
-      subtitle: "Update 27/07/2026",
+      subtitle: "Đã được up lên theme global xem video ghim trên tiktok để cài",
       icon: "theme",
       url: githubReleaseUrl(
         "tinhtinh1908",
@@ -42,7 +42,7 @@ window.PROFILE = {
         "download",
         "Dark.mtz"
       ),
-      download: true,
+      download: false,
       previewFolder: "themedark",
     },
     {
