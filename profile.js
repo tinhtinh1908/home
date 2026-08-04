@@ -26,12 +26,12 @@ window.PROFILE = {
   socials: [
     //{ label: "Facebook", icon: "facebook", url: "" },
     { label: "TikTok", icon: "tiktok", url: "https://www.tiktok.com/@dtinh12" },
-    { label: "Telegram", icon: "telegram", url: "https://t.me/tinhtinh122333" },
+    //{ label: "Telegram", icon: "telegram", url: "" },
     { label: "Github", icon: "github", url: "https://github.com/tinhtinh1908" },
     { label: "Zalo", icon: "zalo", url: "https://zalo.me/g/ngmiprot9untroxqusd8" },
   ],
   links: [
-    {
+    /*{
       id: "theme-hyperos-dark",
       title: "Theme Việt hóa (dark)",
       subtitle: "Đã có trên theme global",
@@ -58,7 +58,7 @@ window.PROFILE = {
       ),
       download: false,
       previewFolder: "themelight",
-    },
+    },*/
     {
       id: "font-backup-vietnamese",
       title: "File backup phông chữ tiếng Việt",
