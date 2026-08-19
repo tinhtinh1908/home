@@ -16,6 +16,13 @@ window.CONTENT_FAQ = [
     videoLabel: "Mở TikTok"
   },
   {
+    title: "Có thể đổi theme khác không",
+    description: "",
+    text: [
+      "Không. Chỉ thay được icon app và hình nển, nếu đổi sang theme khác sẽ mất tiếng Việt",
+    ],
+  },
+  {
     title: "Tại sao không tìm thấy theme trong Theme Store",
     description: "",
     text: [
