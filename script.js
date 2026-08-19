@@ -35,7 +35,7 @@ function renderThemeButton(theme) {
   if (action === 'themeApp') {
     const url = getThemeAppUrl(theme);
     return url
-      ? `<a class="download-button" href="${url}" rel="noreferrer" aria-label="Mở ${theme.name} trong ứng dụng Chủ đề">${ui.openThemeApp || 'Mở Chủ đề'}</a>`
+      ? `<a class="download-button" href="${url}" target="_blank" rel="noopener noreferrer" aria-label="Mở ${theme.name} trong ứng dụng Chủ đề">${ui.openThemeApp || 'Mở Chủ đề'}</a>`
       : '';
   }
 
