@@ -19,7 +19,7 @@ window.CONTENT_THEMES = [
     downloadUrl: "",
 
     /* Chỉ điền ID nằm sau https://zhuti.xiaomi.com/detail/ */
-    themeAppId: "",
+    themeAppId: "6213ce34-d0f1-4a31-9825-50c6d12bf0c3",
 
     previewImages: [
       "assets/blue.webp",
@@ -42,7 +42,7 @@ window.CONTENT_THEMES = [
     downloadUrl: "",
 
     /* Chỉ điền ID nằm sau https://zhuti.xiaomi.com/detail/ */
-    themeAppId: "",
+    themeAppId: "57c07750-d8d1-4e68-8477-42090247d1bc",
 
     previewImages: [
       "assets/pink.webp"
