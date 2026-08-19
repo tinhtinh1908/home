@@ -24,11 +24,19 @@ function getThemeButtonAction(theme) {
   return theme.buttonAction === 'themeApp' ? 'themeApp' : 'download';
 }
 
-function renderThemeButton(theme, themeIndex) {
+function getThemeAppUrl(theme) {
+  const themeId = String(theme.themeAppId || '').trim();
+  return themeId ? `https://zhuti.xiaomi.com/detail/${encodeURIComponent(themeId)}` : '';
+}
+
+function renderThemeButton(theme) {
   const action = getThemeButtonAction(theme);
 
   if (action === 'themeApp') {
-    return `<button class="download-button" type="button" data-open-theme-app="${themeIndex}" aria-label="Mở ${theme.name} trong ứng dụng Chủ đề">${ui.openThemeApp || 'Mở Chủ đề'}</button>`;
+    const url = getThemeAppUrl(theme);
+    return url
+      ? `<a class="download-button" href="${url}" rel="noreferrer" aria-label="Mở ${theme.name} trong ứng dụng Chủ đề">${ui.openThemeApp || 'Mở Chủ đề'}</a>`
+      : '';
   }
 
   if (theme.download && theme.downloadUrl) {
@@ -59,17 +67,9 @@ document.querySelector('#themeList').innerHTML = content.themes.map((theme, them
         ${getThemeButtonAction(theme) === 'download' && theme.download && theme.downloadUrl ? `<small class="download-count" data-download-url="${theme.downloadUrl}">${ui.loadingDownloads || 'Đang lấy lượt tải...'}</small>` : ''}
       </span>
     </span>
-    ${renderThemeButton(theme, themeIndex)}
+    ${renderThemeButton(theme)}
   </article>
 `).join('');
-
-document.querySelector('#themeList').addEventListener('click', (event) => {
-  const button = event.target.closest('[data-open-theme-app]');
-  if (!button) return;
-
-  const theme = content.themes[Number(button.dataset.openThemeApp)];
-  window.HyperOSActions?.openThemeSearch(theme?.themeSearchName || theme?.name);
-});
 
 document.querySelectorAll('.theme-art img').forEach((image) => {
   const reveal = () => image.parentElement.classList.add('is-loaded');

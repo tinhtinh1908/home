@@ -18,7 +18,8 @@ window.CONTENT_THEMES = [
     download: false,
     downloadUrl: "",
 
-    themeSearchName: "Light Blue",
+    /* Chỉ điền ID nằm sau https://zhuti.xiaomi.com/detail/ */
+    themeAppId: "",
 
     previewImages: [
       "assets/blue.webp",
@@ -40,7 +41,8 @@ window.CONTENT_THEMES = [
     download: false,
     downloadUrl: "",
 
-    themeSearchName: "Pink Galaxy",
+    /* Chỉ điền ID nằm sau https://zhuti.xiaomi.com/detail/ */
+    themeAppId: "",
 
     previewImages: [
       "assets/pink.webp"
