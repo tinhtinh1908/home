@@ -26,10 +26,7 @@ function getThemeButtonAction(theme) {
 
 function getThemeAppUrl(theme) {
   const themeId = String(theme.themeAppId || '').trim();
-  if (!themeId) return '';
-
-  const protocol = /Android/i.test(navigator.userAgent) ? 'theme://' : 'https://';
-  return `${protocol}zhuti.xiaomi.com/detail/${encodeURIComponent(themeId)}`;
+  return themeId ? `theme://zhuti.xiaomi.com/detail/${encodeURIComponent(themeId)}` : '';
 }
 
 function renderThemeButton(theme) {
@@ -37,9 +34,8 @@ function renderThemeButton(theme) {
 
   if (action === 'themeApp') {
     const url = getThemeAppUrl(theme);
-    const newTab = url.startsWith('https://') ? ' target="_blank"' : '';
     return url
-      ? `<a class="download-button" href="${url}"${newTab} rel="noopener noreferrer" aria-label="Mở ${theme.name} trong ứng dụng Chủ đề">${ui.openThemeApp || 'Mở Chủ đề'}</a>`
+      ? `<a class="download-button" href="${url}" rel="noreferrer" aria-label="Mở ${theme.name} trong ứng dụng Chủ đề">${ui.openThemeApp || 'Mở Chủ đề'}</a>`
       : '';
   }
 
