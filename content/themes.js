@@ -47,5 +47,31 @@ window.CONTENT_THEMES = [
     previewImages: [
       "assets/pink.webp"
     ]
+  },
+
+   {
+    name: "Âm lịch Việt Nam",
+    support: "Tất cả thiết bị ",
+    mode: "",
+    version: "1.2",
+
+    thumbnail: "assets/lich.webp",
+    thumbnailPosition: "center",
+
+    buttonAction: "download",
+    download: true,
+    downloadUrl: "",
+
+    /* Chỉ điền ID nằm sau https://zhuti.xiaomi.com/detail/ */
+    themeAppId: "",
+
+    previewImages: [
+      "lich/1.webp",
+      "lich/2.webp",
+      "lich/3.webp",
+      "lich/4.webp",
+      "lich/5.webp",
+      "lich/6.webp",
+    ]
   }
 ];
