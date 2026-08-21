@@ -6,7 +6,7 @@
  */
 window.CONTENT_FAQ = [
     {
-    title: "Cách theme có nóng máy, chậm thông báo không",
+    title: "Cài theme có nóng máy, chậm thông báo không",
     description: "",
 
     text: [
