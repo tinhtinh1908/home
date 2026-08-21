@@ -93,7 +93,9 @@ function parseGitHubReleaseUrl(value) {
 }
 
 async function getReleaseData(release) {
-  const endpoint = `https://api.github.com/repos/${encodeURIComponent(release.owner)}/${encodeURIComponent(release.repo)}/releases/tags/${encodeURIComponent(release.tag)}`;
+  const endpoint = release.tag === 'latest'
+  ? `https://api.github.com/repos/${encodeURIComponent(release.owner)}/${encodeURIComponent(release.repo)}/releases/latest`
+  : `https://api.github.com/repos/${encodeURIComponent(release.owner)}/${encodeURIComponent(release.repo)}/releases/tags/${encodeURIComponent(release.tag)}`;
   const cacheKey = `github-release:${endpoint}`;
   try {
     const cached = JSON.parse(localStorage.getItem(cacheKey));
