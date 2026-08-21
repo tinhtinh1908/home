@@ -81,6 +81,16 @@ function parseGitHubReleaseUrl(value) {
   try {
     const url = new URL(value);
     if (url.hostname !== 'github.com') return null;
+    const latest = url.pathname.match(/^\/([^/]+)\/([^/]+)\/releases\/latest\/download\/(.+)$/);
+    if (latest) {
+      return {
+        owner: decodeURIComponent(latest[1]),
+        repo: decodeURIComponent(latest[2]),
+        tag: 'latest',
+        assetName: decodeURIComponent(latest[3])
+      };
+    }
+
     const tagged = url.pathname.match(/^\/([^/]+)\/([^/]+)\/releases\/download\/([^/]+)\/(.+)$/);
     if (!tagged) return null;
     return {
@@ -135,18 +145,7 @@ async function loadDownloadCount(counter) {
 }
 
 const counters = document.querySelectorAll('.download-count');
-if ('IntersectionObserver' in window) {
-  const counterObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      observer.unobserve(entry.target);
-      loadDownloadCount(entry.target);
-    });
-  }, { rootMargin: '160px' });
-  counters.forEach((counter) => counterObserver.observe(counter));
-} else {
-  counters.forEach(loadDownloadCount);
-}
+counters.forEach(loadDownloadCount);
 
 const updates = Array.isArray(content.update) ? content.update : [content.update];
 const updateList = document.querySelector('#updateList');
