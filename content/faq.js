@@ -5,6 +5,15 @@
  * Để videoUrl: "" nếu không cần nút video.
  */
 window.CONTENT_FAQ = [
+    {
+    title: "Cách theme có nóng máy, chậm thông báo không",
+    description: "",
+
+    text: [
+      "ĐÉO LIÊN QUAN ĐẾN THÔNG BÁO HỎI SUỐT NGU VỪA, THEME MÀ NÓNG THÌ ĐỪNG CÓ DÙNG THEME NỮA"
+      "THAN THEME GÂY CHẬM THÔNG BÁO THÌ KIỂM TRA LẠI CÁI ĐẦU, HOẶC MUA MÁY QUỐC TẾ MÀ DÙNG, MÁY NỘI ĐỊA ĐÒI THÔNG BÁO NGON NHƯ QUỐC TẾ À MỠ ĐẤY MÀ ĂN"
+    ],
+  },
   {
     title: "Cách cài theme",
     description: "Hướng dẫn cài theme HyperOS 3",
