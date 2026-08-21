@@ -5,7 +5,8 @@ const pages = [...document.querySelectorAll('[data-page]')];
 const navButtons = [...document.querySelectorAll('[data-tab]')];
 const releaseRequests = new Map();
 const countFormatter = new Intl.NumberFormat('vi-VN');
-const releaseCacheTime = 30 * 60 * 1000;
+// Chỉ giữ số lượt tải trong 60 giây để tránh hiển thị dữ liệu cũ quá lâu.
+const releaseCacheTime = 60 * 1000;
 
 // Đổ toàn bộ tiêu đề và nhãn từ content.js để HTML chỉ giữ vai trò khung.
 pages.forEach((page) => {
@@ -114,14 +115,22 @@ async function getReleaseData(release) {
   if (!releaseRequests.has(endpoint)) {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 8000);
-    const request = fetch(endpoint, { signal: controller.signal })
+    const request = fetch(endpoint, {
+      signal: controller.signal,
+      cache: 'no-store',
+      headers: {
+        Accept: 'application/vnd.github+json'
+      }
+    })
       .then((response) => {
         if (!response.ok) throw new Error(`GitHub API: ${response.status}`);
         return response.json();
       })
-      .finally(() => clearTimeout(timeout));
+      .finally(() => {
+        clearTimeout(timeout);
+        releaseRequests.delete(endpoint);
+      });
     releaseRequests.set(endpoint, request);
-    request.catch(() => releaseRequests.delete(endpoint));
   }
   const data = await releaseRequests.get(endpoint);
   try { localStorage.setItem(cacheKey, JSON.stringify({ savedAt: Date.now(), data })); } catch {}
@@ -129,10 +138,14 @@ async function getReleaseData(release) {
 }
 
 async function loadDownloadCount(counter) {
-  if (counter.dataset.loaded) return;
-  counter.dataset.loaded = 'true';
+  if (counter.dataset.loading === 'true') return;
+  counter.dataset.loading = 'true';
   const release = parseGitHubReleaseUrl(counter.dataset.downloadUrl);
-  if (!release) { counter.hidden = true; return; }
+  if (!release) {
+    counter.hidden = true;
+    counter.dataset.loading = 'false';
+    return;
+  }
   try {
     const data = await getReleaseData(release);
     const asset = (data.assets || []).find((item) => item.name === release.assetName);
@@ -141,11 +154,14 @@ async function loadDownloadCount(counter) {
   } catch (error) {
     counter.textContent = `— ${ui.downloads || 'lượt tải'}`;
     console.warn(error.message);
+  } finally {
+    counter.dataset.loading = 'false';
   }
 }
 
 const counters = document.querySelectorAll('.download-count');
 counters.forEach(loadDownloadCount);
+setInterval(() => counters.forEach(loadDownloadCount), releaseCacheTime);
 
 const updates = Array.isArray(content.update) ? content.update : [content.update];
 const updateList = document.querySelector('#updateList');
