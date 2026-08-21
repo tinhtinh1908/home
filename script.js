@@ -175,8 +175,8 @@ updateList.innerHTML = updates.map((release, releaseIndex) => `
           : release.version.split('.')[0]}
       </div>
       <div>
-        <span>${releaseIndex === 0 ? ui.currentVersion || 'Phiên bản hiện tại' : 'Phiên bản'}</span>
-        <strong>v${release.version}</strong>
+        <strong>${release.name || `v${release.version}`}</strong>
+        <span>${release.name ? `${releaseIndex === 0 ? ui.currentVersion || 'Phiên bản hiện tại' : 'Phiên bản'} · v${release.version}` : (releaseIndex === 0 ? ui.currentVersion || 'Phiên bản hiện tại' : 'Phiên bản')}</span>
       </div>
       ${release.latest ? `<span class="status-chip">${ui.latestStatus || 'Mới nhất'}</span>` : ''}
     </div>
