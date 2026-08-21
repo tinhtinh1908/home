@@ -53,14 +53,14 @@ window.CONTENT_THEMES = [
     name: "Âm lịch Việt Nam",
     support: "Tất cả thiết bị ",
     mode: "",
-    version: "1.2",
+    version: "2.0.0",
 
     thumbnail: "assets/lich.webp",
     thumbnailPosition: "center",
 
     buttonAction: "download",
     download: true,
-    downloadUrl: "",
+    downloadUrl: "https://github.com/tinhtinh1908/Amlich/releases/latest/download/base_1.apk",
 
     /* Chỉ điền ID nằm sau https://zhuti.xiaomi.com/detail/ */
     themeAppId: "",
