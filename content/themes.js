@@ -60,7 +60,7 @@ window.CONTENT_THEMES = [
 
     buttonAction: "download",
     download: true,
-    downloadUrl: "https://github.com/tinhtinh1908/Amlich/releases/latest/download/base_1.apk",
+    downloadUrl: "https://github.com/tinhtinh1908/Amlich/releases/latest/download/Amlich.apk",
 
     /* Chỉ điền ID nằm sau https://zhuti.xiaomi.com/detail/ */
     themeAppId: "",
