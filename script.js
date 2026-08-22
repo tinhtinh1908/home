@@ -82,59 +82,79 @@ function parseGitHubReleaseUrl(value) {
   try {
     const url = new URL(value);
     if (url.hostname !== 'github.com') return null;
-    const latest = url.pathname.match(/^\/([^/]+)\/([^/]+)\/releases\/latest\/download\/(.+)$/);
+
+    const latest = url.pathname.match(/^\/([^/]+)\/([^/]+)\/releases\/latest\/download\/.+$/);
     if (latest) {
       return {
         owner: decodeURIComponent(latest[1]),
-        repo: decodeURIComponent(latest[2]),
-        tag: 'latest',
-        assetName: decodeURIComponent(latest[3])
+        repo: decodeURIComponent(latest[2])
       };
     }
 
-    const tagged = url.pathname.match(/^\/([^/]+)\/([^/]+)\/releases\/download\/([^/]+)\/(.+)$/);
+    const tagged = url.pathname.match(/^\/([^/]+)\/([^/]+)\/releases\/download\/[^/]+\/.+$/);
     if (!tagged) return null;
     return {
       owner: decodeURIComponent(tagged[1]),
-      repo: decodeURIComponent(tagged[2]),
-      tag: decodeURIComponent(tagged[3]),
-      assetName: decodeURIComponent(tagged[4])
+      repo: decodeURIComponent(tagged[2])
     };
   } catch { return null; }
 }
 
-async function getReleaseData(release) {
-  const endpoint = release.tag === 'latest'
-  ? `https://api.github.com/repos/${encodeURIComponent(release.owner)}/${encodeURIComponent(release.repo)}/releases/latest`
-  : `https://api.github.com/repos/${encodeURIComponent(release.owner)}/${encodeURIComponent(release.repo)}/releases/tags/${encodeURIComponent(release.tag)}`;
-  const cacheKey = `github-release:${endpoint}`;
+async function getTotalReleaseDownloads(release) {
+  const repoKey = `${release.owner}/${release.repo}`;
+  const cacheKey = `github-release-total:${repoKey}`;
+
   try {
     const cached = JSON.parse(localStorage.getItem(cacheKey));
-    if (cached && Date.now() - cached.savedAt < releaseCacheTime) return cached.data;
+    if (cached && Date.now() - cached.savedAt < releaseCacheTime) return Number(cached.total) || 0;
   } catch {}
-  if (!releaseRequests.has(endpoint)) {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 8000);
-    const request = fetch(endpoint, {
-      signal: controller.signal,
-      cache: 'no-store',
-      headers: {
-        Accept: 'application/vnd.github+json'
+
+  if (!releaseRequests.has(repoKey)) {
+    const request = (async () => {
+      let total = 0;
+
+      for (let page = 1; ; page += 1) {
+        const endpoint = `https://api.github.com/repos/${encodeURIComponent(release.owner)}/${encodeURIComponent(release.repo)}/releases?per_page=100&page=${page}`;
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 8000);
+
+        try {
+          const response = await fetch(endpoint, {
+            signal: controller.signal,
+            cache: 'no-store',
+            headers: {
+              Accept: 'application/vnd.github+json'
+            }
+          });
+
+          if (!response.ok) throw new Error(`GitHub API: ${response.status}`);
+
+          const releases = await response.json();
+          total += releases.reduce((releaseTotal, item) => {
+            const assetTotal = (item.assets || []).reduce(
+              (sum, asset) => sum + (Number(asset.download_count) || 0),
+              0
+            );
+            return releaseTotal + assetTotal;
+          }, 0);
+
+          if (releases.length < 100) break;
+        } finally {
+          clearTimeout(timeout);
+        }
       }
-    })
-      .then((response) => {
-        if (!response.ok) throw new Error(`GitHub API: ${response.status}`);
-        return response.json();
-      })
-      .finally(() => {
-        clearTimeout(timeout);
-        releaseRequests.delete(endpoint);
-      });
-    releaseRequests.set(endpoint, request);
+
+      return total;
+    })().finally(() => {
+      releaseRequests.delete(repoKey);
+    });
+
+    releaseRequests.set(repoKey, request);
   }
-  const data = await releaseRequests.get(endpoint);
-  try { localStorage.setItem(cacheKey, JSON.stringify({ savedAt: Date.now(), data })); } catch {}
-  return data;
+
+  const total = await releaseRequests.get(repoKey);
+  try { localStorage.setItem(cacheKey, JSON.stringify({ savedAt: Date.now(), total })); } catch {}
+  return total;
 }
 
 async function loadDownloadCount(counter) {
@@ -147,10 +167,8 @@ async function loadDownloadCount(counter) {
     return;
   }
   try {
-    const data = await getReleaseData(release);
-    const asset = (data.assets || []).find((item) => item.name === release.assetName);
-    if (!asset) throw new Error('Không tìm thấy file Release');
-    counter.textContent = `${countFormatter.format(asset.download_count || 0)} ${ui.downloads || 'lượt tải'}`;
+    const total = await getTotalReleaseDownloads(release);
+    counter.textContent = `${countFormatter.format(total)} ${ui.downloads || 'lượt tải'}`;
   } catch (error) {
     counter.textContent = `— ${ui.downloads || 'lượt tải'}`;
     console.warn(error.message);
