@@ -7,6 +7,7 @@
   <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
   <meta name="description" content="Kho theme Việt hoá dành cho Xiaomi HyperOS 3.">
   <link rel="icon" type="image/webp" href="assets/dtinh.webp">
+  <link rel="manifest" href="manifest.webmanifest?v=1">
   <title>DTinh Theme</title>
   <script>
     (() => {
@@ -17,8 +18,8 @@
       } catch { document.documentElement.dataset.theme = 'light'; }
     })();
   </script>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="preview.css">
+  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="preview.css?v=5">
 </head>
 <body>
   <svg class="icon-sprite" aria-hidden="true">
@@ -98,14 +99,20 @@
     </nav>
   </div>
 
-  <script src="content/site.js"></script>
-  <script src="content/themes.js"></script>
-  <script src="content/update.js"></script>
-  <script src="content/faq.js"></script>
-  <script src="content/donate.js"></script>
-  <script src="content/links.js"></script>
-  <script src="content.js"></script>
-  <script src="script.js?v=4"></script>
-  <script src="preview.js"></script>
+  <script src="content/site.js?v=5"></script>
+  <script src="content/themes.js?v=5"></script>
+  <script src="content/update.js?v=5"></script>
+  <script src="content/faq.js?v=5"></script>
+  <script src="content/donate.js?v=5"></script>
+  <script src="content/links.js?v=5"></script>
+  <script src="content.js?v=5"></script>
+  <script src="github-download-filter.js?v=1"></script>
+  <script src="script.js?v=5"></script>
+  <script src="preview.js?v=5"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+    }
+  </script>
 </body>
 </html>
