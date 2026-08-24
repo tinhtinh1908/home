@@ -4,6 +4,22 @@
  */
 window.CONTENT_UPDATE = [
   {
+    version: "1.3",
+    date: "24 tháng 8, 2026",
+    latest: true,
+
+    thumbnail: "assets/pinkgalaxy.webp",
+    thumbnailPosition: "center",
+
+    changes: [
+      {
+        color: "green",
+        title: "Cập nhật",
+        description: "Cập nhật thêm việt hoá, bổ sung app: Mi share, liên thông, chỉnh sửa ảnh, gameturbo, chủ đề, getsapps, ngày giời màn hình khoá, xiaomi cloud, khoá tạp chí, tài khoản mi, máy quét"
+      },
+    ]
+  },
+  {
     version: "1.3.1",
     date: "20 tháng 8, 2026",
     latest: true,
