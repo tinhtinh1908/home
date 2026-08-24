@@ -30,7 +30,7 @@ window.CONTENT_THEMES = [
     name: "Pink Galaxy",
     support: "HyperOS 3",
     mode: "Chế độ sáng",
-    version: "1.2",
+    version: "1.3",
     art: "pink",
     mark: "P",
 
