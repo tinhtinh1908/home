@@ -14,7 +14,7 @@ window.CONTENT_UPDATE = [
     changes: [
       {
         color: "green",
-        title: "Cập nhật",
+        title: "Cập nhật Pink Galaxy",
         description: "Cập nhật thêm việt hoá, bổ sung app: Mi share, liên thông, chỉnh sửa ảnh, gameturbo, chủ đề, getsapps, ngày giời màn hình khoá, xiaomi cloud, khoá tạp chí, tài khoản mi, máy quét"
       },
     ]
@@ -30,7 +30,7 @@ window.CONTENT_UPDATE = [
     changes: [
       {
         color: "blue",
-        title: "Fix lỗi",
+        title: "Fix lỗi Light Blue",
         description: "Sửa lỗi hiển thị Light Blue V1.3, bổ sung thêm ngày giời ở màn hình khóa."
       },
     ]
