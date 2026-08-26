@@ -20,8 +20,8 @@ window.CONTENT_UPDATE = [
     ]
   },
   {
-    version: "1.3.1",
-    date: "20 tháng 8, 2026",
+    version: "1.3",
+    date: "26 tháng 8, 2026",
     latest: true,
 
     thumbnail: "assets/lightblue.webp",
@@ -29,9 +29,9 @@ window.CONTENT_UPDATE = [
 
     changes: [
       {
-        color: "blue",
-        title: "Fix lỗi Light Blue",
-        description: "Sửa lỗi hiển thị Light Blue V1.3, bổ sung thêm ngày giời ở màn hình khóa."
+        color: "red",
+        title: "Ngừng cập nhật",
+        description: "V1.3 là bản cập nhật cuối cùng. Sẽ có theme khác thay thế cho nền tối."
       },
     ]
   }
