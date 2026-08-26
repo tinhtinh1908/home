@@ -7,7 +7,7 @@ window.CONTENT_THEMES = [
     name: "Light Blue",
     support: "HyperOS 3",
     mode: "Chế độ tối",
-    version: "1.3-Ngừng cập nhật. Lỗi quá nhiều + sẽ có theme khác xịn hơn vào thời gian sau",
+    version: "1.3-Ngừng cập nhật.",
     art: "blue",
     mark: "L",
 
