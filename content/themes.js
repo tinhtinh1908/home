@@ -7,7 +7,7 @@ window.CONTENT_THEMES = [
     name: "Light Blue",
     support: "HyperOS 3",
     mode: "Chế độ tối",
-    version: "1.3-Ngừng cập nhật.",
+    version: "1.3 - Ngừng cập nhật",
     art: "blue",
     mark: "L",
 
@@ -30,7 +30,7 @@ window.CONTENT_THEMES = [
     name: "Pink Galaxy",
     support: "HyperOS 3",
     mode: "Chế độ sáng",
-    version: "1.3",
+    version: "1.3 - Ngừng cập nhật",
     art: "pink",
     mark: "P",
 
