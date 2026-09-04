@@ -3,6 +3,29 @@
  * Muốn thêm theme: sao chép nguyên một khối { ... }.
  */
 window.CONTENT_THEMES = [
+    {
+    name: "Snow Viet",
+    support: "HyperOS 3(sẽ hỗ trợ HyperOS 4)",
+    mode: "Chế độ x",
+    version: "1.0 - Sắp ra mắt",
+    art: "red",
+    mark: "S",
+
+    thumbnail: "",
+    thumbnailPosition: "center",
+
+    buttonAction: "themeApp",
+    download: false,
+    downloadUrl: "",
+
+    /* Chỉ điền ID nằm sau https://zhuti.xiaomi.com/detail/ */
+    themeAppId: "",
+
+    previewImages: [
+      "",
+    ]
+  },
+  
   {
     name: "Light Blue",
     support: "HyperOS 3",
