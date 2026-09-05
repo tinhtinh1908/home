@@ -5,13 +5,13 @@
 window.CONTENT_THEMES = [
     {
     name: "Snow Viet",
-    support: "HyperOS 3(sẽ hỗ trợ HyperOS 4)",
-    mode: "Chế độ x",
+    support: "HyperOS 3 - (HyperOS 4)",
+    mode: "Chế độ Sáng/Tối",
     version: "1.0 - Sắp ra mắt",
     art: "red",
     mark: "S",
 
-    thumbnail: "",
+    thumbnail: "assets/snowviet.webp",
     thumbnailPosition: "center",
 
     buttonAction: "themeApp",
