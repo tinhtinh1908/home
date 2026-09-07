@@ -1,4 +1,4 @@
-const CACHE_NAME = 'dtinh-home-v4';
+const CACHE_NAME = 'dtinh-home-v5';
 const CORE_ASSETS = [
   './',
   './index.html',
