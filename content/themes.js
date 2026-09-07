@@ -19,7 +19,7 @@ window.CONTENT_THEMES = [
     downloadUrl: "",
 
     /* Chỉ điền ID nằm sau https://zhuti.xiaomi.com/detail/ */
-    themeAppId: "",
+    themeAppId: "cfd78969-41c7-4c69-98b7-f4072c620f3a",
 
     previewImages: [
       "",
