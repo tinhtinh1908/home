@@ -76,7 +76,7 @@ window.CONTENT_THEMES = [
     name: "Âm lịch Việt Nam",
     support: "Tất cả thiết bị ",
     mode: "",
-    version: "2.1.1",
+    version: "2.3.0",
 
     thumbnail: "assets/lich.webp",
     thumbnailPosition: "center",
