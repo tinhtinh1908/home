@@ -1,11 +1,11 @@
-const CACHE_NAME = 'dtinh-home-v5';
+const CACHE_NAME = 'dtinh-home-v6';
 const CORE_ASSETS = [
   './',
   './index.html',
   './style.css?v=5',
   './preview.css?v=5',
   './content/site.js?v=5',
-  './content/themes.js?v=5',
+  './content/themes.js?v=6',
   './content/update.js?v=5',
   './content/faq.js?v=5',
   './content/donate.js?v=5',
