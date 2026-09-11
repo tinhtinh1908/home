@@ -13,9 +13,9 @@ window.CONTENT_LINKS = [
 
   {
     title: "Nhóm Zalo",
-    subtitle: "Cộng đồng HyperOS Việt hoá",
+    subtitle: "Báo lỗi",
     mark: "Z",
     icon: "assets/zalo.webp",
-    url: "https://zalo.me/g/ngmiprot9untroxqusd8"
+    url: "https://zalo.me/g/jywoimq6mhqlnliyp9zo"
   }
 ];
