@@ -12,7 +12,7 @@ window.CONTENT_FAQ = [
     text: [
     ],
 
-    videoUrl: "https://www.tiktok.com/@dtinh12/video/7669681386013478164",
+    videoUrl: "https://www.tiktok.com/@dtinh12/video/7685258953952988436",
     videoLabel: "Mở TikTok"
   },
   {
