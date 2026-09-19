@@ -1,19 +1,19 @@
-const CACHE_NAME = 'dtinh-home-v7';
+const CACHE_NAME = 'dtinh-home-v__BUILD__';
 const CORE_ASSETS = [
   './',
   './index.html',
-  './style.css?v=5',
-  './preview.css?v=5',
-  './content/site.js?v=5',
-  './content/themes.js?v=6',
-  './content/update.js?v=5',
-  './content/faq.js?v=5',
-  './content/donate.js?v=5',
-  './content/links.js?v=6',
-  './content.js?v=5',
-  './github-download-filter.js?v=1',
-  './script.js?v=5',
-  './preview.js?v=5',
+  './style.css?v=__BUILD__',
+  './preview.css?v=__BUILD__',
+  './content/site.js?v=__BUILD__',
+  './content/themes.js?v=__BUILD__',
+  './content/update.js?v=__BUILD__',
+  './content/faq.js?v=__BUILD__',
+  './content/donate.js?v=__BUILD__',
+  './content/links.js?v=__BUILD__',
+  './content.js?v=__BUILD__',
+  './github-download-filter.js?v=__BUILD__',
+  './script.js?v=__BUILD__',
+  './preview.js?v=__BUILD__',
   './assets/dtinh.webp'
 ];
 
@@ -51,19 +51,17 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Network-first: always try to get the latest file first.
+  // Cache is only used as a fallback when there's no network (offline).
   event.respondWith(
-    caches.match(request).then((cached) => {
-      const network = fetch(request)
-        .then((response) => {
-          if (response.ok) {
-            const copy = response.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
-          }
-          return response;
-        })
-        .catch(() => cached);
-
-      return cached || network;
-    })
+    fetch(request)
+      .then((response) => {
+        if (response.ok) {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+        }
+        return response;
+      })
+      .catch(() => caches.match(request))
   );
 });
