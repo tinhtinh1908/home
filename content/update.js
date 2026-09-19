@@ -3,10 +3,26 @@
  * Muốn thêm phiên bản: sao chép nguyên một khối { ... }.
  */
 window.CONTENT_UPDATE = [
+    {
+    version: "1.0",
+    date: "7 tháng 9, 2026",
+    latest: true,
+
+    thumbnail: "assets/snowviet.webp",
+    thumbnailPosition: "center",
+
+    changes: [
+      {
+        color: "green",
+        title: "Theme mới nhất hỗ trợ cả sáng và tối !!!",
+        description: " Tối ưu dựa trên các theme cũ dịch lại toàn bộ, tối ưu bản dịch, tối ưu dung lượng theme bổ sung dịch, giảm lag so với Light Blue, Pink Galaxy. Hỗ trợ cả chế độ tối và sáng, thêm hiệu ứng giả kính vào control center."
+      },
+    ]
+  },
   {
     version: "1.3",
     date: "24 tháng 8, 2026",
-    latest: true,
+    latest: false,
 
     thumbnail: "assets/pinkgalaxy.webp",
     thumbnailPosition: "center",
@@ -22,7 +38,7 @@ window.CONTENT_UPDATE = [
   {
     version: "1.3",
     date: "26 tháng 8, 2026",
-    latest: true,
+    latest: false,
 
     thumbnail: "assets/lightblue.webp",
     thumbnailPosition: "center",
