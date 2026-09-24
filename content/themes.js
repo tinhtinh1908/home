@@ -25,7 +25,30 @@ window.CONTENT_THEMES = [
       "",
     ]
   },
-  
+    
+  {
+    name: "Phông chữ tiếng Việt",
+    support: "Vui lòng cài Theme GLB 2.3.1.8 để dùng file",
+    mode: "",
+    version: "",
+    art: "red",
+    mark: "S",
+
+    thumbnail: "",
+    thumbnailPosition: "center",
+
+    buttonAction: "download",
+    download: true,
+    downloadUrl: "https://github.com/tinhtinh1908/home/releases/download/download/backupfont.zip",
+
+    /* Chỉ điền ID nằm sau https://zhuti.xiaomi.com/detail/ */
+    themeAppId: "",
+
+    previewImages: [
+      "",
+    ]
+  },
+    
   {
     name: "Light Blue",
     support: "HyperOS 3",
