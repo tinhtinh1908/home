@@ -5,9 +5,9 @@
 window.CONTENT_THEMES = [
     {
     name: "Snow Viet",
-    support: "HyperOS 3 - (HyperOS 4)",
+    support: "HyperOS 3/4",
     mode: "Chế độ Sáng/Tối",
-    version: "1.0",
+    version: "1.1",
     art: "red",
     mark: "S",
 
