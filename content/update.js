@@ -4,9 +4,25 @@
  */
 window.CONTENT_UPDATE = [
     {
+    version: "1.1",
+    date: " 28 tháng 9, 2026",
+    latest: true,
+
+    thumbnail: "assets/snowviet.webp",
+    thumbnailPosition: "center",
+
+    changes: [
+      {
+        color: "green",
+        title: "",
+        description: "Bổ sung tiếng Việt vào ứng dụng cài đặt"
+      },
+    ]
+},
+{
     version: "1.0",
     date: "7 tháng 9, 2026",
-    latest: true,
+    latest: false,
 
     thumbnail: "assets/snowviet.webp",
     thumbnailPosition: "center",
