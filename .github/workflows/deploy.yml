@@ -24,7 +24,7 @@ jobs:
       - name: Replace version placeholder
         run: |
           SHORT_SHA=$(git rev-parse --short HEAD)
-          sed -i "s/__BUILD__/$SHORT_SHA/g" index.html sw.js
+          sed -i "s/__BUILD__/$SHORT_SHA/g" index.html sw.js js/*.js
 
       - uses: actions/configure-pages@v5
 
