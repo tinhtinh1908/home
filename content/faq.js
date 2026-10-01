@@ -6,6 +6,9 @@ export default [
     videoLabel: "Mở TikTok"
   },
   {
+    title: "Liên hệ: tinhamericano99@gmail.com"
+  },
+  {
     title: "Tại sao không tìm thấy theme trong Theme Store",
     text: "Yêu cầu máy chạy hệ điều hành HyperOS 3. Nếu máy bạn đang chạy Hyper 1 hoặc Hyper 2 thì không thể tìm thấy theme."
   },
