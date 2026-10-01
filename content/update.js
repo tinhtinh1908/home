@@ -2,7 +2,7 @@ export default [
   {
     name: "Snow Viet",
     version: "1.1",
-    date: "28 tháng 9, 2026",
+    date: "? tháng 10, 2026",
     latest: true,
     thumbnail: "assets/snowviet.webp",
     changes: [
