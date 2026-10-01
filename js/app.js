@@ -1,28 +1,29 @@
-import content from './content.js?v=__BUILD__';
 const root = document.documentElement;
-const ui = content.ui || {};
 const pages = [...document.querySelectorAll('[data-page]')];
 const navButtons = [...document.querySelectorAll('[data-tab]')];
-pages.forEach((page) => {
-  const pageContent = ui.pages?.[page.dataset.page];
-  if (!pageContent) return;
-  page.querySelector('.eyebrow').textContent = pageContent.eyebrow;
-  page.querySelector('h1').textContent = pageContent.title;
-  page.querySelector('.page-subtitle').textContent = pageContent.subtitle;
-  const navLabel = document.querySelector(`[data-tab="${page.dataset.page}"] small`);
-  if (navLabel) {
-    navLabel.textContent = pageContent.nav;
-    navLabel.parentElement.setAttribute('aria-label', pageContent.nav);
-  }
-});
-document.querySelector('#latest-themes').textContent = ui.latestTitle || 'Mới phát hành';
-document.querySelector('.live-dot').lastChild.textContent = ui.latestBadge || 'Mới nhất';
-pages.forEach((page) => {
-  const footer = document.createElement('p');
-  footer.className = 'site-copyright';
-  footer.textContent = content.footer;
-  page.append(footer);
-});
+function applyContent(content) {
+  const ui = content.ui || {};
+  pages.forEach((page) => {
+    const pageContent = ui.pages?.[page.dataset.page];
+    if (!pageContent) return;
+    page.querySelector('.eyebrow').textContent = pageContent.eyebrow;
+    page.querySelector('h1').textContent = pageContent.title;
+    page.querySelector('.page-subtitle').textContent = pageContent.subtitle;
+    const navLabel = document.querySelector(`[data-tab="${page.dataset.page}"] small`);
+    if (navLabel) {
+      navLabel.textContent = pageContent.nav;
+      navLabel.parentElement.setAttribute('aria-label', pageContent.nav);
+    }
+  });
+  document.querySelector('#latest-themes').textContent = ui.latestTitle || 'Mới phát hành';
+  document.querySelector('.live-dot').lastChild.textContent = ui.latestBadge || 'Mới nhất';
+  pages.forEach((page) => {
+    const footer = document.createElement('p');
+    footer.className = 'site-copyright';
+    footer.textContent = content.footer;
+    page.append(footer);
+  });
+}
 
 document.querySelector('.bottom-nav').addEventListener('click', (event) => {
   const button = event.target.closest('[data-tab]');
@@ -58,6 +59,9 @@ themeButton.addEventListener('click', () => {
   themeTransitionTimer = setTimeout(() => root.classList.remove('theme-changing'), 420);
 });
 updateThemeButton();
+
+import('./content.js?v=__BUILD__').then(({ default: content }) => applyContent(content))
+  .catch((error) => console.error('Không tải được chữ giao diện:', error));
 
 // Khởi tạo điều hướng trước; lỗi ở một mục không khóa toàn bộ giao diện.
 const sections = [

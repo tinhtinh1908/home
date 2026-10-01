@@ -37,9 +37,18 @@ const previewMeta = previewModal.querySelector('#previewMeta');
 let activeIndex = 0;
 let lastFocus;
 let scrollFrame;
+let layoutFrame;
+let aligning = false;
 
 function getSlides() {
   return [...carousel.children];
+}
+
+function updatePreviewGutters() {
+  const slide = carousel.firstElementChild;
+  if (!slide) return;
+  const padding = Math.max(16, (carousel.clientWidth - slide.offsetWidth) / 2);
+  carousel.style.paddingInline = `${padding}px`;
 }
 
 function updatePreviewControls(slideCount) {
@@ -62,7 +71,7 @@ function setActive(index, smooth = true) {
   const left = slide.offsetLeft - (carousel.clientWidth - slide.offsetWidth) / 2;
   carousel.scrollTo({
     left,
-    behavior: smooth ? 'smooth' : 'auto'
+    behavior: smooth ? 'smooth' : 'instant'
   });
 }
 
@@ -105,11 +114,17 @@ function openPreview(theme) {
   previewModal.hidden = false;
   document.body.classList.add('preview-open');
   previewModal.classList.add('is-open');
+  updatePreviewGutters();
   setActive(0, false);
   closeButton.focus();
 }
 
 function closePreview() {
+  cancelAnimationFrame(scrollFrame);
+  cancelAnimationFrame(layoutFrame);
+  scrollFrame = 0;
+  layoutFrame = 0;
+  aligning = false;
   previewModal.classList.remove('is-open');
   document.body.classList.remove('preview-open');
   previewModal.hidden = true;
@@ -134,10 +149,11 @@ previousButton.addEventListener('click', () => setActive(activeIndex - 1));
 nextButton.addEventListener('click', () => setActive(activeIndex + 1));
 
 carousel.addEventListener('scroll', () => {
-  if (scrollFrame) return;
+  if (previewModal.hidden || aligning || scrollFrame) return;
 
   scrollFrame = requestAnimationFrame(() => {
     scrollFrame = 0;
+    if (previewModal.hidden || aligning) return;
     const slides = getSlides();
     const center = carousel.scrollLeft + carousel.clientWidth / 2;
     let nearestIndex = 0;
@@ -156,6 +172,24 @@ carousel.addEventListener('scroll', () => {
     updatePreviewControls(slides.length);
   });
 }, { passive: true });
+
+// Giữ ảnh đang chọn khi xoay máy hoặc kích thước cửa sổ thay đổi.
+function alignPreview() {
+  if (previewModal.hidden) return;
+  aligning = true;
+  cancelAnimationFrame(layoutFrame);
+  layoutFrame = requestAnimationFrame(() => {
+    updatePreviewGutters();
+    setActive(activeIndex, false);
+    layoutFrame = requestAnimationFrame(() => {
+      aligning = false;
+      layoutFrame = 0;
+    });
+  });
+}
+const layoutObserver = new ResizeObserver(alignPreview);
+layoutObserver.observe(carousel, { box: 'border-box' });
+window.addEventListener('resize', alignPreview);
 
 document.addEventListener('keydown', (event) => {
   if (previewModal.hidden) return;

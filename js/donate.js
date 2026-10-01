@@ -10,11 +10,16 @@ document.querySelector('.copy-account small').textContent = ui.accountNumber || 
 document.querySelector('.copy-account em').textContent = ui.copyHint || 'Chạm để sao chép';
 document.querySelector('.thank-you').textContent = ui.thankYou || '';
 const qr = document.querySelector('#bankQr');
-qr.src = `https://img.vietqr.io/image/${bank.bankCode}-${bank.accountNumber}-compact2.png?accountName=${encodeURIComponent(bank.accountName)}`;
+if (bank.bankCode && bank.accountNumber) {
+  qr.src = `https://img.vietqr.io/image/${bank.bankCode}-${bank.accountNumber}-compact2.png?accountName=${encodeURIComponent(bank.accountName || '')}`;
+} else {
+  qr.hidden = true;
+  document.querySelector('.copy-account').disabled = true;
+}
 qr.alt = `Mã QR chuyển khoản tới tài khoản ${bank.accountNumber}`;
-document.querySelector('#accountName').textContent = bank.accountName;
-document.querySelector('#accountNumber').textContent = bank.accountNumber;
-document.querySelector('.copy-account').dataset.copy = bank.accountNumber;
+document.querySelector('#accountName').textContent = bank.accountName || '';
+document.querySelector('#accountNumber').textContent = bank.accountNumber || '';
+document.querySelector('.copy-account').dataset.copy = bank.accountNumber || '';
 
 const donorModal = document.querySelector('#donorModal');
 const donorButton = document.querySelector('#donorButton');
