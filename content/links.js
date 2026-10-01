@@ -19,7 +19,7 @@ export default [
     title: "Liên hệ",
     subtitle: "tinhamericano99@gmail.com",
     mark: "M",
-    url""
+    url: ""
   }
   
 ];
