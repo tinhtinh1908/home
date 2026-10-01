@@ -13,5 +13,11 @@ export default [
     mark: "Z",
     icon: "assets/zalo.webp",
     url: "https://zalo.me/g/jywoimq6mhqlnliyp9zo"
+  },
+
+  {
+    title: "Liên hệ",
+    subtitle: "tinhamericano99@gmail.com"
   }
+  
 ];
