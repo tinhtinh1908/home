@@ -222,9 +222,9 @@ h1{font-size:clamp(27px,6.5vw,31px);font-weight:760;line-height:1.05;letter-spac
 .theme-title{overflow:visible;white-space:normal;overflow-wrap:anywhere}
 .theme-version{max-width:100%;white-space:normal;overflow-wrap:anywhere}
 .meta-row{flex-wrap:wrap;overflow:visible;white-space:normal}
-.support{min-width:0;flex:1 1 auto;white-space:normal;overflow-wrap:anywhere}
+.support{min-width:0;flex:0 1 auto;white-space:normal;overflow-wrap:anywhere}
 .support i{flex:0 0 auto}
-.theme-mode{white-space:normal}
+.theme-mode{flex:0 0 auto;max-width:100%;white-space:nowrap}
 .theme-links{flex-wrap:wrap;overflow:visible}
 .download-count{max-width:100%}
 .version-icon{flex:0 0 48px}
