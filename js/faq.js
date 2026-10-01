@@ -1,5 +1,5 @@
 import content from './content.js?v=__BUILD__';
-import {escapeHtml, externalUrl} from './utils.js?v=__BUILD__';
+import {escapeHtml, externalUrl, contactUrl} from './utils.js?v=__BUILD__';
 const ui = content.ui || {};
 const faqItems = Array.isArray(content.faq) ? content.faq : [];
 document.querySelector('#faqList').innerHTML = faqItems.map((item, index) => `
@@ -47,8 +47,8 @@ document.querySelector('#faqList').addEventListener('click', (event) => {
 });
 faqModal.querySelector('.faq-backdrop').addEventListener('click', () => setFaqModal(false));
 faqModal.querySelector('.faq-close').addEventListener('click', () => setFaqModal(false));
-document.querySelector('#moreList').innerHTML = content.more.filter((item) => externalUrl(item.url)).map((item) => `
-  <a class="more-card" href="${escapeHtml(externalUrl(item.url))}" target="_blank" rel="noopener noreferrer">
+document.querySelector('#moreList').innerHTML = content.more.filter((item) => contactUrl(item.url)).map((item) => `
+  <a class="more-card" href="${escapeHtml(contactUrl(item.url))}"${externalUrl(item.url) ? ' target="_blank" rel="noopener noreferrer"' : ''}>
     <span class="more-icon${item.icon ? ' has-image' : ''}" aria-hidden="true">
       ${item.icon ? `<img src="${escapeHtml(item.icon)}" alt="" width="96" height="96" loading="lazy" decoding="async">` : escapeHtml(item.mark)}
     </span>

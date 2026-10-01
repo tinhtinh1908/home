@@ -21,6 +21,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Validate JavaScript and content
+        run: |
+          for file in js/*.js content/*.js sw.js; do node --check "$file"; done
+          npm test
+
       - name: Replace version placeholder
         run: |
           SHORT_SHA=$(git rev-parse --short HEAD)

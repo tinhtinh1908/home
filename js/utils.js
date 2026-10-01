@@ -13,9 +13,19 @@ export function externalUrl(value) {
   } catch { return ''; }
 }
 
+// Link liên hệ được dùng email; các link video vẫn chỉ nhận HTTPS.
+export function contactUrl(value) {
+  const webUrl = externalUrl(value);
+  if (webUrl) return webUrl;
+  try {
+    const url = new URL(value);
+    return url.protocol === 'mailto:' && /^[^\s@?]+@[^\s@?]+\.[^\s@?]+$/.test(url.pathname)
+      && !url.search && !url.hash ? url.href : '';
+  } catch { return ''; }
+}
+
 export function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>"']/g, (character) => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   })[character]);
 }
-

@@ -1,10 +1,4 @@
 import content from './content.js?v=__BUILD__';
-import './themes.js?v=__BUILD__';
-import './updates.js?v=__BUILD__';
-import './faq.js?v=__BUILD__';
-import './donate.js?v=__BUILD__';
-import './preview.js?v=__BUILD__';
-import './notifications.js?v=__BUILD__';
 const root = document.documentElement;
 const ui = content.ui || {};
 const pages = [...document.querySelectorAll('[data-page]')];
@@ -65,3 +59,17 @@ themeButton.addEventListener('click', () => {
 });
 updateThemeButton();
 
+// Khởi tạo điều hướng trước; lỗi ở một mục không khóa toàn bộ giao diện.
+const sections = [
+  './themes.js?v=__BUILD__',
+  './updates.js?v=__BUILD__',
+  './faq.js?v=__BUILD__',
+  './donate.js?v=__BUILD__',
+  './preview.js?v=__BUILD__',
+  './notifications.js?v=__BUILD__'
+];
+Promise.allSettled(sections.map((path) => import(path))).then((results) => {
+  results.forEach((result, index) => {
+    if (result.status === 'rejected') console.error(`Không khởi tạo được ${sections[index]}:`, result.reason);
+  });
+});

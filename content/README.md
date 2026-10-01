@@ -20,5 +20,6 @@
 - Với cập nhật có một nội dung, sửa trực tiếp `title`, `description`, `color`. `title` và `color` có thể bỏ; `color: "red"` hiển thị chấm đỏ.
 - Nếu một bản có nhiều nội dung, dùng `changes: [{ title: "...", description: "..." }, { description: "..." }]` thay cho các trường nội dung trực tiếp.
 - Chỉ đặt `latest: true` ở bản muốn đánh dấu mới nhất.
+- Thông báo chung trong `update.js` có thể chỉ có `date` và `description`, không bắt buộc có `name`, `version` hay `thumbnail`.
 
 Các file này chỉ chứa dữ liệu. Phần ghép dữ liệu cho giao diện nằm ở `js/content.js`.

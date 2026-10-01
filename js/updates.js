@@ -5,18 +5,21 @@ const updates = Array.isArray(content.update) ? content.update : [content.update
 const updateList = document.querySelector('#updateList');
 
 updateList.innerHTML = updates.map((release) => {
+  const version = String(release.version ?? '').trim();
+  const name = release.name || (version ? `v${version}` : 'Thông báo');
   const label = release.latest ? ui.currentVersion || 'Phiên bản hiện tại' : 'Phiên bản';
+  const subtitle = version ? (release.name ? `${label} · v${version}` : label) : 'Cập nhật';
   return `
   <article class="update-card">
     <div class="update-top">
       <div class="version-icon${release.thumbnail ? ' has-thumbnail' : ''}">
         ${release.thumbnail
           ? `<img src="${escapeHtml(release.thumbnail)}" alt="" width="96" height="96" loading="lazy" decoding="async">`
-          : escapeHtml(release.version.split('.')[0])}
+          : escapeHtml(version ? version.split('.')[0] : 'i')}
       </div>
       <div>
-        <strong>${escapeHtml(release.name || `v${release.version}`)}</strong>
-        <span>${escapeHtml(release.name ? `${label} · v${release.version}` : label)}</span>
+        <strong>${escapeHtml(name)}</strong>
+        <span>${escapeHtml(subtitle)}</span>
       </div>
       ${release.latest ? `<span class="status-chip">${escapeHtml(ui.latestStatus || 'Mới nhất')}</span>` : ''}
     </div>
@@ -33,4 +36,3 @@ updateList.innerHTML = updates.map((release) => {
   </article>
   `;
 }).join('');
-

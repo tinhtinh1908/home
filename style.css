@@ -215,3 +215,22 @@ h1{font-size:clamp(27px,6.5vw,31px);font-weight:760;line-height:1.05;letter-spac
     margin:auto;
   }
 }
+
+/* Nội dung dài cần xuống dòng thay vì đẩy thẻ hoặc che nút thao tác. */
+.app-bar>div{min-width:0;padding-right:44px}
+.theme-heading{flex-wrap:wrap}
+.theme-title{overflow:visible;white-space:normal;overflow-wrap:anywhere}
+.theme-version{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.meta-row{flex-wrap:wrap;overflow:visible;white-space:normal}
+.support{min-width:0;flex:1 1 auto;white-space:normal;overflow-wrap:anywhere}
+.support i{flex:0 0 auto}
+.theme-mode{white-space:normal}
+.theme-links{flex-wrap:wrap;overflow:visible}
+.download-count{max-width:100%}
+.version-icon{flex:0 0 48px}
+.update-top{gap:8px}
+.update-top>div:nth-child(2){min-width:0}
+.update-top strong,.change-list p,.faq-copy{min-width:0;overflow-wrap:anywhere}
+.more-copy small{overflow:visible;white-space:normal;overflow-wrap:anywhere}
+.bank-details>div{flex-wrap:wrap;gap:8px}
+.qr-frame{max-width:100%}
