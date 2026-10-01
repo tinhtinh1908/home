@@ -1,3 +1,4 @@
+// Các liên kết ở cuối trang Hỏi đáp, theo thứ tự hiển thị.
 export default [
   {
     title: "TikTok",
@@ -22,5 +23,4 @@ export default [
     icon: "",
     url: "mailto:tinhamericano99@gmail.com"
   }
-  
 ];

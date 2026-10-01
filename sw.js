@@ -14,6 +14,7 @@ const CORE_ASSETS = [
   './js/preview.js?v=__BUILD__',
   './js/notifications.js?v=__BUILD__',
   './content/site.js?v=__BUILD__',
+  './content/pages.js?v=__BUILD__',
   './content/themes.js?v=__BUILD__',
   './content/update.js?v=__BUILD__',
   './content/faq.js?v=__BUILD__',
