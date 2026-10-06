@@ -2,6 +2,11 @@
 // Mỗi bản hiện có một nội dung: sửa trực tiếp title, description, color.
 export default [
   {
+    date: "6 tháng 10, 2026",
+    description: "Mua file mtz vui lòng liên hệ giá công khai 20K 1 bản. Dùng miễn phí vui lòng tải trên theme global."
+  },
+  
+  {
     date: "2 tháng 10, 2026",
     description: " Xoá Light Blue và Pink Galaxy ra khỏi cửa hàng"
   },
