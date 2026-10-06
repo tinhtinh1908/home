@@ -2,8 +2,26 @@
 // themeCode và downloadCode giữ dạng Base64. previewImages là danh sách ảnh xem trước.
 export default [
   {
+    name: "Dark Moon",
+    support: "HyperOS 4",
+    mode: "Chế độ sáng/tối",
+    version: "1.0 (Đang test)",
+    thumbnail: "assets/snowviet.webp",
+    themeCode: ""
+  },
+  
+  {
+    name: "Dark Moon (file mtz)",
+    support: "Tất cả thiết bị",
+    mode: "Bấm vào link để mua file 20K 1 bản",
+    version: "File mtz bản việt hóa",
+    thumbnail: "",
+    downloadCode: "https://zalo.me/876006982"
+  },
+  
+  {
     name: "Snow Viet",
-    support: "HyperOS 3/4",
+    support: "HyperOS 3",
     mode: "Chế độ sáng/tối",
     version: "1.1 (chưa được duyệt)",
     thumbnail: "assets/snowviet.webp",
