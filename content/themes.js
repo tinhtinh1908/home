@@ -1,6 +1,22 @@
 // Danh sách thẻ ở trang Chủ đề, theo thứ tự hiển thị.
 // themeCode và downloadCode giữ dạng Base64. previewImages là danh sách ảnh xem trước.
 export default [
+    {
+    name: "CHÚ Ý",
+    support: "CÓ ĐỨA ĂN CẮP FILE MTZ ĐEM BÁN",
+    mode: "VUI LÒNG KHÔNG MUA BẤT KÌ FILE MTZ NÀO CỦA NGƯỜI ẤY BẤM VÀO XEM ẢNH",
+    version: "",
+    thumbnail: "",
+    themeCode: "",
+    previewImages: [
+      "lich/1.webp",
+      "lich/2.webp",
+      "lich/3.webp",
+      "lich/4.webp",
+      "lich/5.webp",
+      "lich/6.webp"
+    ]
+  },
   {
     name: "Dark Moon",
     support: "HyperOS 4",
