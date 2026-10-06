@@ -6,17 +6,17 @@ export default [
     support: "HyperOS 4",
     mode: "Chế độ sáng/tối",
     version: "1.0 (Đang test)",
-    thumbnail: "assets/snowviet.webp",
+    thumbnail: "",
     themeCode: ""
   },
   
   {
     name: "Dark Moon (file mtz)",
-    support: "Tất cả thiết bị",
+    support: "",
     mode: "Bấm vào link để mua file 20K 1 bản",
     version: "File mtz bản việt hóa",
     thumbnail: "",
-    downloadCode: "https://zalo.me/876006982"
+    downloadCode: "aHR0cHM6Ly96YWxvLm1lLzg3NjAwNjk4Mg=="
   },
   
   {
