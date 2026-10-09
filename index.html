@@ -19,7 +19,18 @@
     })();
   </script>
   <link rel="stylesheet" href="style.css?v=__BUILD__">
-  <link rel="stylesheet" href="preview.css?v=__BUILD__">
+  <link rel="preload" as="image" href="assets/snowviet.webp" fetchpriority="high">
+  <!-- Discover the content graph before app.js starts its dynamic imports. -->
+  <link rel="modulepreload" href="js/content.js?v=__BUILD__">
+  <link rel="modulepreload" href="js/themes.js?v=__BUILD__">
+  <link rel="modulepreload" href="js/utils.js?v=__BUILD__">
+  <link rel="modulepreload" href="content/site.js?v=__BUILD__">
+  <link rel="modulepreload" href="content/pages.js?v=__BUILD__">
+  <link rel="modulepreload" href="content/themes.js?v=__BUILD__">
+  <link rel="modulepreload" href="content/update.js?v=__BUILD__">
+  <link rel="modulepreload" href="content/faq.js?v=__BUILD__">
+  <link rel="modulepreload" href="content/donate.js?v=__BUILD__">
+  <link rel="modulepreload" href="content/links.js?v=__BUILD__">
 </head>
 <body>
   <svg class="icon-sprite" aria-hidden="true">
@@ -62,7 +73,7 @@
       <section class="donate-card">
         <div class="donate-heading"><div><span>Quét mã để chuyển khoản</span><strong>Ủng hộ dự án</strong></div><button class="heart-bubble" id="donorButton" type="button" aria-label="Xem danh sách người ủng hộ" aria-haspopup="dialog"><svg aria-hidden="true"><use href="#i-heart"/></svg></button></div>
         <div class="qr-frame">
-          <img id="bankQr" alt="Mã QR chuyển khoản" loading="eager" decoding="async" width="512" height="512">
+          <img id="bankQr" alt="Mã QR chuyển khoản" loading="eager" decoding="async" width="540" height="640">
           <span class="scan-corner c1"></span><span class="scan-corner c2"></span><span class="scan-corner c3"></span><span class="scan-corner c4"></span>
         </div>
         <div class="bank-details">

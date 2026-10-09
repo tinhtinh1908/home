@@ -96,7 +96,8 @@ function createPreviewSlide(theme, source, index) {
   return slide;
 }
 
-function openPreview(theme) {
+export function openPreview(themeIndex) {
+  const theme = content.themes[themeIndex];
   const images = theme?.previewImages?.filter(Boolean) || [];
   if (!images.length) return;
 
@@ -131,15 +132,6 @@ function closePreview() {
   carousel.replaceChildren();
   lastFocus?.focus?.();
 }
-
-document.addEventListener('click', (event) => {
-  const button = event.target.closest('[data-preview-theme]');
-  if (!button) return;
-
-  event.preventDefault();
-  const themeIndex = Number(button.dataset.previewTheme);
-  openPreview(content.themes[themeIndex]);
-});
 
 previewModal.querySelectorAll('[data-preview-close]').forEach((element) => {
   element.addEventListener('click', closePreview);

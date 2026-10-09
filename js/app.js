@@ -38,6 +38,7 @@ document.querySelector('.bottom-nav').addEventListener('click', (event) => {
     page.hidden = !active;
     page.classList.toggle('is-active', active);
   });
+  loadSection(button.dataset.tab);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
@@ -63,17 +64,64 @@ updateThemeButton();
 import('./content.js?v=__BUILD__').then(({ default: content }) => applyContent(content))
   .catch((error) => console.error('Không tải được chữ giao diện:', error));
 
-// Khởi tạo điều hướng trước; lỗi ở một mục không khóa toàn bộ giao diện.
-const sections = [
-  './themes.js?v=__BUILD__',
-  './updates.js?v=__BUILD__',
-  './faq.js?v=__BUILD__',
-  './donate.js?v=__BUILD__',
-  './preview.js?v=__BUILD__',
-  './notifications.js?v=__BUILD__'
-];
-Promise.allSettled(sections.map((path) => import(path))).then((results) => {
-  results.forEach((result, index) => {
-    if (result.status === 'rejected') console.error(`Không khởi tạo được ${sections[index]}:`, result.reason);
-  });
+// Only initialize a section when it is visible. Cache concurrent clicks and
+// allow a failed import to be retried without breaking navigation.
+const sectionPaths = {
+  themes: './themes.js?v=__BUILD__',
+  updates: './updates.js?v=__BUILD__',
+  faq: './faq.js?v=__BUILD__',
+  donate: './donate.js?v=__BUILD__'
+};
+const sectionRequests = new Map();
+function loadSection(name) {
+  const path = sectionPaths[name];
+  if (!path) return Promise.resolve();
+  if (!sectionRequests.has(name)) {
+    const request = import(path).catch((error) => {
+      sectionRequests.delete(name);
+      console.error(`Không khởi tạo được ${path}:`, error);
+    });
+    sectionRequests.set(name, request);
+  }
+  return sectionRequests.get(name);
+}
+loadSection('themes');
+// Native messages must work before the donation tab is visited.
+import('./notifications.js?v=__BUILD__').catch((error) => console.error(error));
+
+let previewRequest;
+function loadPreview() {
+  if (!previewRequest) {
+    previewRequest = new Promise((resolve, reject) => {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'preview.css?v=__BUILD__';
+      link.onload = resolve;
+      link.onerror = () => {
+        link.remove();
+        reject(new Error('Không tải được giao diện xem ảnh'));
+      };
+      document.head.append(link);
+    }).then(() => import('./preview.js?v=__BUILD__')).catch((error) => {
+      previewRequest = undefined;
+      throw error;
+    });
+  }
+  return previewRequest;
+}
+let previewClick = 0;
+document.addEventListener('click', async (event) => {
+  const button = event.target.closest('[data-preview-theme]');
+  if (!button) return;
+  event.preventDefault();
+  const click = ++previewClick;
+  try {
+    const { openPreview } = await loadPreview();
+    // A later click or tab switch should not open an outdated selection.
+    if (click === previewClick && !button.closest('[data-page]')?.hidden) {
+      openPreview(Number(button.dataset.previewTheme));
+    }
+  } catch (error) {
+    console.error('Không mở được ảnh xem trước:', error);
+  }
 });

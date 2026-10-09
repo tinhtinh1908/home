@@ -24,11 +24,13 @@ function renderThemeButton(theme, themeIndex) {
   return '';
 }
 
+const firstThumbnailIndex = content.themes.findIndex((theme) => theme.thumbnail);
+
 document.querySelector('#themeList').innerHTML = content.themes.map((theme, themeIndex) => `
   <article class="theme-card">
     <span class="theme-art ${theme.thumbnail ? 'has-thumbnail' : 'art-default'}" aria-hidden="true">
       ${theme.thumbnail
-        ? `<img src="${escapeHtml(theme.thumbnail)}" alt="" width="96" height="96" loading="${themeIndex < 2 ? 'eager' : 'lazy'}" decoding="async" fetchpriority="${themeIndex === 0 ? 'high' : 'auto'}">`
+        ? `<img src="${escapeHtml(theme.thumbnail)}" alt="" width="96" height="96" loading="${themeIndex < 3 ? 'eager' : 'lazy'}" decoding="async" fetchpriority="${themeIndex === firstThumbnailIndex && themeIndex < 3 ? 'high' : 'auto'}">`
         : `<i class="orb orb-a"></i><i class="orb orb-b"></i><i class="glass-pill"></i><span class="art-mark">${escapeHtml(theme.mark)}</span>`}
     </span>
     <span class="theme-info">

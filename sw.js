@@ -1,4 +1,4 @@
-const CACHE_NAME = 'dtinh-home-modules-v4-__BUILD__';
+const CACHE_NAME = 'dtinh-home-modules-v5-__BUILD__';
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -74,16 +74,22 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  event.respondWith(
-    fetch(request)
-      .then((response) => {
-        if (response.ok) {
-          const copy = response.clone();
-          event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.put(request, copy)));
-          return response;
-        }
-        return caches.match(request).then((cached) => cached || response);
-      })
-      .catch(() => caches.match(request))
-  );
+  // A commit hash makes the resource URL immutable. Reuse that exact URL
+  // without a round trip; unversioned requests stay network-first for updates.
+  const version = url.searchParams.get('v');
+  const immutable = /\.(?:js|css)$/.test(url.pathname) && /^[a-f0-9]{7,40}$/.test(version || '');
+  const fetchAsset = () => fetch(request)
+    .then((response) => {
+      if (response.ok) {
+        const copy = response.clone();
+        event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.put(request, copy)));
+        return response;
+      }
+      return caches.match(request).then((cached) => cached || response);
+    })
+    .catch(() => caches.match(request));
+
+  event.respondWith(immutable
+    ? caches.match(request).then((cached) => cached || fetchAsset())
+    : fetchAsset());
 });
