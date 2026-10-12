@@ -10,14 +10,6 @@ export default [
     date: "2 tháng 10, 2026",
     description: " Xoá Light Blue và Pink Galaxy ra khỏi cửa hàng"
   },
-  {
-    name: "Snow Viet",
-    version: "1.1",
-    date: "? tháng 10, 2026",
-    latest: true,
-    thumbnail: "assets/snowviet.webp",
-    description: "Bổ sung tiếng Việt vào ứng dụng cài đặt"
-  },
 
   {
     name: "Snow Viet",
