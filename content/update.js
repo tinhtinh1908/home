@@ -2,6 +2,11 @@
 // Mỗi bản hiện có một nội dung: sửa trực tiếp title, description, color.
 export default [
   {
+    date: "12 tháng 10, 2026",
+    description: "Dừng update Snow Viet. Sẽ bổ sung 2 theme có lịch âm và không lịch âm."
+  },
+  
+  {
     date: "6 tháng 10, 2026",
     description: "Mua file mtz vui lòng liên hệ giá công khai 20K 1 bản. Dùng miễn phí vui lòng tải trên theme global."
   },
