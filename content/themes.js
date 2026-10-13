@@ -1,6 +1,24 @@
 // Danh sách thẻ ở trang Chủ đề, theo thứ tự hiển thị.
 // themeCode và downloadCode giữ dạng Base64. previewImages là danh sách ảnh xem trước.
 export default [
+    {
+    name: "Hoang Sa",
+    support: "HyperOS 3",
+    mode: "Chế độ sáng/tối",
+    version: "H1.0",
+    thumbnail: "assets/hoangsa.webp",
+    themeCode: "ZjRiYWE5MzMtZTE1My00ZWNhLWE4ZjktYTI4OWQ2YTViYzMx"
+  },
+  
+  {
+    name: "Truong Sa(Âm lịch)",
+    support: "HyperOS 3",
+    mode: "Chế độ sáng/tối",
+    version: "T1.0",
+    thumbnail: "assets/truongsa.webp",
+    themeCode: ""
+  },
+
   {
     name: "MTZ Tiếng Việt",
     support: "Giá file 20k",
