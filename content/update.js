@@ -1,6 +1,15 @@
 // Bản mới đặt trước. latest: true đánh dấu bản mới nhất.
 // Mỗi bản hiện có một nội dung: sửa trực tiếp title, description, color.
 export default [
+    {
+    name: "Hoang Sa",
+    version: "H1.0",
+    date: "13 tháng 10, 2026",
+    thumbnail: "assets/hoangsa.webp",
+    latest: true,
+    description: " Xoá giả kính, kế thừa toàn bộ bản dịch từ Snow Viet 1.1"
+  },
+  
   {
     date: "12 tháng 10, 2026",
     description: "Dừng update Snow Viet. Sẽ bổ sung 2 theme có lịch âm và không lịch âm."
