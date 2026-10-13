@@ -69,3 +69,47 @@ test('tài nguyên theo commit dùng cache, bản phát triển vẫn kiểm tra
   assert.equal(fetches, 4);
   assert.equal(writes.length, 4);
 });
+
+test('ảnh lấy bản mới, bỏ qua HTTP cache và cập nhật bản lưu', async () => {
+  const listeners = {};
+  const cached = new Response('old image');
+  let network = async () => new Response('new image');
+  const writes = [];
+  const requests = [];
+  const context = vm.createContext({
+    URL,
+    self: { location: { origin: 'https://example.test' }, addEventListener: (type, callback) => { listeners[type] = callback; } },
+    fetch: async (request, options) => { requests.push(options); return network(); },
+    caches: {
+      match: async () => cached,
+      open: async () => ({ put: async (request, response) => { writes.push(await response.text()); } })
+    }
+  });
+  vm.runInContext(await readFile(new URL('../sw.js', import.meta.url), 'utf8'), context);
+  const requestImage = async (path) => {
+    let response;
+    const pending = [];
+    listeners.fetch({
+      request: { method: 'GET', mode: 'cors', url: `https://example.test/${path}` },
+      respondWith: (promise) => { response = promise; },
+      waitUntil: (promise) => { pending.push(promise); }
+    });
+    const result = await response;
+    await Promise.all(pending);
+    return result;
+  };
+  for (const path of ['assets/hoangsa.webp', 'lich/1.webp', 'assets/icon.png']) {
+    assert.equal(await (await requestImage(path)).text(), 'new image');
+  }
+  assert.equal(requests.length, 3);
+  assert.ok(requests.every((options) => options.cache === 'no-store'));
+  assert.deepEqual(writes, ['new image', 'new image', 'new image']);
+
+  network = async () => { throw new Error('offline'); };
+  assert.equal(await requestImage('assets/hoangsa.webp'), cached);
+  network = async () => new Response('unavailable', { status: 503 });
+  assert.equal(await requestImage('assets/hoangsa.webp'), cached);
+  assert.equal(writes.length, 3);
+  context.caches.match = async () => undefined;
+  assert.equal((await requestImage('assets/missing.webp')).status, 503);
+});

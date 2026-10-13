@@ -1,4 +1,4 @@
-const CACHE_NAME = 'dtinh-home-modules-v5-__BUILD__';
+const CACHE_NAME = 'dtinh-home-modules-v6-__BUILD__';
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -45,15 +45,18 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
 
-  if (url.pathname.endsWith('.webp')) {
+  // Image paths are reused when a thumbnail or preview is replaced.
+  // Bypass the HTTP cache and refresh the saved image whenever online.
+  if (request.destination === 'image' || /\.(?:webp|png|jpe?g|gif|svg|avif|ico)$/i.test(url.pathname)) {
     event.respondWith(
-      caches.match(request).then((cached) => cached || fetch(request).then((response) => {
+      fetch(request, { cache: 'no-store' }).then((response) => {
         if (response.ok) {
           const copy = response.clone();
           event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.put(request, copy)));
+          return response;
         }
-        return response;
-      }))
+        return caches.match(request).then((cached) => cached || response);
+      }).catch(() => caches.match(request))
     );
     return;
   }
