@@ -1,7 +1,16 @@
 // Bản mới đặt trước. latest: true đánh dấu bản mới nhất.
 // Mỗi bản hiện có một nội dung: sửa trực tiếp title, description, color.
 export default [
-    {
+  {
+    name: "Truong Sa",
+    version: "T1.0",
+    date: "13 tháng 10, 2026",
+    thumbnail: "assets/truongsa.webp",
+    latest: true,
+    description: " Xoá giả kính, kế thừa toàn bộ bản dịch từ Snow Viet 1.1, thử nghiệm âm lịch"
+  },
+  
+  {
     name: "Hoang Sa",
     version: "H1.0",
     date: "13 tháng 10, 2026",
