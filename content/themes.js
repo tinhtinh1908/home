@@ -11,12 +11,12 @@ export default [
   },
   
   {
-    name: "Truong Sa(Âm lịch)",
+    name: "Truong Sa (Âm lịch)",
     support: "HyperOS 3",
     mode: "Chế độ sáng/tối",
     version: "T1.0",
     thumbnail: "assets/truongsa.webp",
-    themeCode: ""
+    themeCode: "MGI3YTFmMGItNTI3Yy00Y2RjLTg3MTQtYTA3N2U0MGMxZDMw"
   },
 
   {
