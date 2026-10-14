@@ -1,1 +1,8 @@
-{"private":true,"type":"module","scripts":{"test":"node --test"}}
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "build:preview": "node scripts/build-preview.mjs"
+  }
+}

@@ -42,12 +42,14 @@ document.querySelector('#themeList').innerHTML = content.themes.map((theme, them
         <span class="support"><i></i>${escapeHtml(theme.support)}</span>
         ${theme.mode ? `<span class="theme-mode">${escapeHtml(theme.mode)}</span>` : ''}
       </span>
+    </span>
+    <div class="theme-actions">
       <span class="theme-links">
         ${theme.previewImages?.some(Boolean) ? `<button class="preview-hint" type="button" data-preview-theme="${themeIndex}">${escapeHtml(ui.preview || 'Xem ảnh preview')}</button>` : ''}
         ${!theme.themeCode && theme.downloadCode ? `<small class="download-count" data-download-theme="${themeIndex}">${escapeHtml(ui.loadingDownloads || 'Đang lấy lượt tải...')}</small>` : ''}
       </span>
-    </span>
-    ${renderThemeButton(theme, themeIndex)}
+      ${renderThemeButton(theme, themeIndex)}
+    </div>
   </article>
 `).join('');
 
