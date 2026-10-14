@@ -2,6 +2,11 @@
 // Mỗi bản hiện có một nội dung: sửa trực tiếp title, description, color.
 export default [
   {
+    date: "14 tháng 10, 2026",
+    description: "Các dòng máy Mipad có thể dùng file mtz để việt hóa không bị reset. Lưu ý chỉ Mipad không bị reset"
+  },
+  
+  {
     name: "Âm lịch Việt Nam",
     version: "2.5",
     date: "14 tháng 10, 2026",
