@@ -2,6 +2,15 @@
 // Mỗi bản hiện có một nội dung: sửa trực tiếp title, description, color.
 export default [
   {
+    name: "Âm lịch Việt Nam",
+    version: "2.5",
+    date: "14 tháng 10, 2026",
+    thumbnail: "assets/amlich.webp",
+    latest: true,
+    description: "Tối ưu lại giao diện thêm tùy chọn màu sắc. Bổ sung widget, thu nhỏ widget 4x4 thành 3x3. Thêm chế độ lịch xé"
+  },
+  
+  {
     name: "Truong Sa",
     version: "T1.0",
     date: "13 tháng 10, 2026",
