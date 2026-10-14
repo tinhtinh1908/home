@@ -44,16 +44,14 @@ export default [
   {
     name: "Âm lịch Việt Nam",
     support: "Tất cả thiết bị",
-    version: "2.4",
+    version: "2.5",
     thumbnail: "assets/lich.webp",
     downloadCode: "aHR0cHM6Ly9naXRodWIuY29tL3Rpbmh0aW5oMTkwOC9BbWxpY2gvcmVsZWFzZXMvbGF0ZXN0L2Rvd25sb2FkL0FtbGljaC5hcGs=",
     previewImages: [
       "lich/1.webp",
       "lich/2.webp",
       "lich/3.webp",
-      "lich/4.webp",
-      "lich/5.webp",
-      "lich/6.webp"
+      "lich/4.webp"
     ]
   }
 ];
