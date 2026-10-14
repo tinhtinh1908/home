@@ -7,7 +7,7 @@ The web UI uses original HTML/CSS, borrowing component proportions and color tok
 - Button and card radius 16px; primary controls at least 40px high.
 - Dialog radius 32px; neutral surfaces, restrained dividers and no decorative glass gradients.
 - Light accent #3482FF; dark accent #277AF7; dark cards #242424.
-- Separate desktop rail and mobile navigation; flexible long labels and action rows.
+- Mobile-only one-column layout (maximum 480px), persistent bottom navigation and flexible card action rows.
 - Dialog/page/press transitions with reduced-motion fallback.
 
 Theme previews, download/open links, release counters, FAQ documents/videos, contact links,
