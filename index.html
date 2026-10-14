@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#f4f4f6" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f7f7f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta name="description" content="Kho theme Việt hoá dành cho Xiaomi HyperOS">
   <link rel="icon" type="image/webp" href="assets/dtinh.webp">
   <link rel="manifest" href="manifest.webmanifest?v=__BUILD__">
@@ -34,6 +34,8 @@
 </head>
 <body>
   <svg class="icon-sprite" aria-hidden="true">
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.7 14A9 9 0 0 1 10 3.3 9 9 0 1 0 20.7 14Z"/></symbol>
     <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="2.2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2.2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2.2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2.2"/></symbol>
     <symbol id="i-update" viewBox="0 0 24 24"><path d="M20 7.8A8.5 8.5 0 1 0 20.1 16"/><path d="M20 3.8v4h-4"/><path d="M12 7.5V12l3.1 1.8"/></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 5.8a5.1 5.1 0 0 0-7.2 0L12 7.4l-1.6-1.6a5.1 5.1 0 0 0-7.2 7.2L12 21l8.8-8a5.1 5.1 0 0 0 0-7.2Z"/></symbol>
@@ -43,8 +45,9 @@
     <symbol id="i-close" viewBox="0 0 24 24"><path d="m7 7 10 10M17 7 7 17"/></symbol>
   </svg>
   <div class="app-shell">
+    <div class="site-brand"><img src="assets/dtinh.webp" alt="" width="36" height="36"><span>DTinh</span></div>
     <button class="theme-button" id="themeButton" type="button" aria-label="Đổi chế độ giao diện">
-      <span class="theme-icon" aria-hidden="true"></span>
+      <span class="theme-icon" aria-hidden="true"><svg class="mode-sun"><use href="#i-sun"/></svg><svg class="mode-moon"><use href="#i-moon"/></svg></span>
     </button>
     <main class="page is-active" id="themes" data-page="themes">
       <header class="app-bar">
