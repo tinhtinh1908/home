@@ -13,6 +13,10 @@ function getDownloadUrl(theme) {
 }
 
 function renderThemeButton(theme, themeIndex) {
+  if (theme.guideUrl === 'huongdan.html') {
+    return '<a class="download-button" href="huongdan.html" aria-label="Mở hướng dẫn vá microG">Mở</a>';
+  }
+
   if (theme.themeCode) {
     return `<button class="download-button" type="button" data-open-theme="${themeIndex}" aria-label="Mở ${escapeHtml(theme.name)} trong ứng dụng Chủ đề">${escapeHtml(ui.openThemeApp || 'Mở Chủ đề')}</button>`;
   }

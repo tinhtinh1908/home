@@ -20,6 +20,13 @@ export default [
   },
 
   {
+    name: "Hướng dẫn vá mic",
+    support: "Nhận thông báo qua MicroG-RE",
+    mark: "G",
+    guideUrl: "huongdan.html"
+  },
+
+  {
     name: "MTZ Tiếng Việt",
     support: "Giá file 20k",
     mode: " IB ZL: 0876006982",
