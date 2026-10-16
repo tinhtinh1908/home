@@ -85,7 +85,10 @@ function loadSection(name) {
   }
   return sectionRequests.get(name);
 }
-loadSection('themes');
+// Open the requested tab when arriving from another page, e.g. the guide.
+const initialTab = navButtons.find((button) => button.dataset.tab === window.location.hash.slice(1));
+if (initialTab) initialTab.click();
+else loadSection('themes');
 // Native messages must work before the donation tab is visited.
 import('./notifications.js?v=__BUILD__').catch((error) => console.error(error));
 
