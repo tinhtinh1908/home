@@ -3,7 +3,7 @@
 export default [
     {
     name: "Hoang Sa",
-    support: "HyperOS 3",
+    support: "HyperOS 3(Đang update)",
     mode: "Chế độ sáng/tối",
     version: "H1.0",
     thumbnail: "assets/hoangsa.webp",
@@ -12,7 +12,7 @@ export default [
   
   {
     name: "Truong Sa (Âm lịch)",
-    support: "HyperOS 3",
+    support: "HyperOS 3(Đang update)",
     mode: "Chế độ sáng/tối",
     version: "T1.0",
     thumbnail: "assets/truongsa.webp",
