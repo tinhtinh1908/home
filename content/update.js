@@ -2,6 +2,11 @@
 // Mỗi bản hiện có một nội dung: sửa trực tiếp title, description, color.
 export default [
   {
+    date: "17 tháng 10, 2026",
+    description: "Theme Truong Sa và Hoang Sa, sẽ được cập nhật lên Hyper 4. Các thiết bị chạy os3, vui lòng sử dụng Snow Viet. Các thiết bị chạy os2 và mipad có thể dùng file mtz"
+  },
+  
+  {
     date: "14 tháng 10, 2026",
     description: "Các dòng máy Mipad có thể dùng file mtz để việt hóa không bị reset. Lưu ý chỉ Mipad không bị reset"
   },
