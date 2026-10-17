@@ -27,7 +27,7 @@ export default [
   },
 
   {
-    name: "MTZ Tiếng Việt",
+    name: "MTZ Tiếng Việt OS4",
     support: "Giá file 20k",
     mode: " IB ZL: 0876006982",
   },
