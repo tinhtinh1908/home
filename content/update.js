@@ -3,6 +3,10 @@
 export default [
   {
     date: "17 tháng 10, 2026",
+    description: "Theme Global chưa cho phép update theme Hyper 4. Vui lòng đợi cho đến khi có thông báo mới."
+  },
+  {
+    date: "17 tháng 10, 2026",
     description: "Theme Truong Sa và Hoang Sa, sẽ được cập nhật lên Hyper 4. Các thiết bị chạy os3, vui lòng sử dụng Snow Viet. Các thiết bị chạy os2 và mipad có thể dùng file mtz"
   },
   
