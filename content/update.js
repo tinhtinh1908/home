@@ -2,6 +2,11 @@
 // Mỗi bản hiện có một nội dung: sửa trực tiếp title, description, color.
 export default [
   {
+    date: "18 tháng 10, 2026",
+    description: " Bổ sung bản vá thông báo Gmail."
+  },
+  
+  {
     date: "17 tháng 10, 2026",
     description: "Theme Global chưa cho phép update theme Hyper 4. Vui lòng đợi cho đến khi có thông báo mới. Hoặc mua file mtz để sử dụng trước"
   },
