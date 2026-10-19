@@ -18,6 +18,12 @@ export default [
     thumbnail: "assets/truongsa.webp",
     themeCode: "MGI3YTFmMGItNTI3Yy00Y2RjLTg3MTQtYTA3N2U0MGMxZDMw"
   },
+    
+  {
+    name: "MTZ Tiếng Việt OS4,OS3,OS2",
+    support: "Giá: 20k,50k",
+    mode: " IB ZL: 0876006982",
+  },
 
   {
     name: "Hướng dẫn vá mic",
@@ -26,12 +32,6 @@ export default [
     guideUrl: "huongdan.html"
   },
 
-  {
-    name: "MTZ Tiếng Việt OS4,OS3,OS2",
-    support: "Giá: 20k,50k",
-    mode: " IB ZL: 0876006982",
-  },
-  
   {
     name: "Snow Viet",
     support: "HyperOS 3",
