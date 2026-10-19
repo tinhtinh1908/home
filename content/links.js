@@ -1,4 +1,6 @@
 // Các liên kết ở cuối trang Hỏi đáp, theo thứ tự hiển thị.
+// Thêm mục mới với title, subtitle, url; icon và mark có thể bỏ trống.
+// url nhận http(s)://…, mailto:…?subject=…, tel:…, sms:… hoặc đường dẫn nội bộ.
 export default [
   {
     title: "TikTok",

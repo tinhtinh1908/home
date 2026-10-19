@@ -1,5 +1,5 @@
 import content from './content.js?v=__BUILD__';
-import {escapeHtml, externalUrl, contactUrl} from './utils.js?v=__BUILD__';
+import {escapeHtml, externalUrl, contactUrl, isContactWebUrl} from './utils.js?v=__BUILD__';
 const ui = content.ui || {};
 const faqItems = Array.isArray(content.faq) ? content.faq : [];
 document.querySelector('#faqList').innerHTML = faqItems.map((item, index) => `
@@ -48,9 +48,9 @@ document.querySelector('#faqList').addEventListener('click', (event) => {
 faqModal.querySelector('.faq-backdrop').addEventListener('click', () => setFaqModal(false));
 faqModal.querySelector('.faq-close').addEventListener('click', () => setFaqModal(false));
 document.querySelector('#moreList').innerHTML = content.more.filter((item) => contactUrl(item.url)).map((item) => `
-  <a class="more-card" href="${escapeHtml(contactUrl(item.url))}"${externalUrl(item.url) ? ' target="_blank" rel="noopener noreferrer"' : ''}>
+  <a class="more-card" href="${escapeHtml(contactUrl(item.url))}"${isContactWebUrl(item.url) ? ' target="_blank" rel="noopener noreferrer"' : ''}>
     <span class="more-icon${item.icon ? ' has-image' : ''}" aria-hidden="true">
-      ${item.icon ? `<img src="${escapeHtml(item.icon)}" alt="" width="96" height="96" loading="lazy" decoding="async">` : escapeHtml(item.mark)}
+      ${item.icon ? `<img src="${escapeHtml(item.icon)}" alt="" width="96" height="96" loading="lazy" decoding="async">` : escapeHtml(item.mark || item.title?.trim().charAt(0) || '↗')}
     </span>
     <span class="more-copy"><strong>${escapeHtml(item.title)}</strong><small>${escapeHtml(item.subtitle)}</small></span>
     <svg class="more-arrow" aria-hidden="true"><use href="#i-chevron"/></svg>

@@ -25,7 +25,8 @@ test('file FAQ lỗi cú pháp không làm mất chủ đề, cập nhật và l
     assert.deepEqual(content.faq, []);
     assert.ok(content.themes.length > 0);
     assert.ok(content.update.length > 0);
-    assert.ok(content.more.some((item) => item.url.startsWith('mailto:')));
+    assert.ok(content.more.length > 0);
+    assert.deepEqual(content.more, (await import('../content/links.js')).default);
     assert.equal(errors.length, 1);
     assert.ok(String(errors[0][0]).includes('faq.js'));
   } finally {
