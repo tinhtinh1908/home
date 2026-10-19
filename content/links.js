@@ -10,9 +10,10 @@ export default [
 
   {
     title: "Liên hệ",
-    subtitle: "tinhamericano99@gmail.com",
-    mark: "M",
+    subtitle: "Zalo",
+    mark: "Z",
     icon: "",
-    url: "mailto:tinhamericano99@gmail.com"
+    url: "https://zalo.me/0876006982"
   }
+  
 ];
