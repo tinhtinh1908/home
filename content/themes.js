@@ -20,8 +20,8 @@ export default [
   },
     
   {
-    name: "MTZ Tiếng Việt OS4,OS3,OS2",
-    support: "Giá: 20k,50k",
+    name: " Cài việt hoá OS4(không mtz)",
+    support: "Giá: 50k",
     mode: " IB ZL: 0876006982",
   },
 
