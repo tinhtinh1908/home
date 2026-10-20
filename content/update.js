@@ -2,6 +2,11 @@
 // Mỗi bản hiện có một nội dung: sửa trực tiếp title, description, color.
 export default [
   {
+    date: "20 tháng 10, 2026",
+    description: " Đã fix os 4 việt hoá "
+  },
+  {
+    
     date: "18 tháng 10, 2026",
     description: " Bổ sung bản vá thông báo Gmail."
   },
