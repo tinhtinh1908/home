@@ -14,7 +14,7 @@ export default [
     title: "Liên hệ",
     subtitle: "Zalo",
     mark: "Z",
-    icon: "",
+    icon: "assets/dtinh.webp",
     url: "https://zalo.me/0876006982"
   }
   
