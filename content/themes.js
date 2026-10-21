@@ -23,6 +23,7 @@ export default [
     name: " Cài việt hoá OS4(không mtz)",
     support: "Giá: 50k",
     mode: " IB ZL: 0876006982",
+    thumbnail: "assets/dtinh.webp",
   },
 
   {
