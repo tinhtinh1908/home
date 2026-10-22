@@ -39,7 +39,7 @@ document.querySelector('.bottom-nav').addEventListener('click', (event) => {
     page.classList.toggle('is-active', active);
   });
   loadSection(button.dataset.tab);
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
 });
 
 const themeButton = document.querySelector('#themeButton');
@@ -50,6 +50,9 @@ function updateThemeButton() {
   themeButton.dataset.mode = dark ? 'dark' : 'light';
   themeButton.setAttribute('aria-label', `Chuyển sang chế độ ${dark ? 'sáng' : 'tối'}`);
   themeButton.title = `Chế độ ${dark ? 'sáng' : 'tối'}`;
+  document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
+    meta.content = dark ? '#000000' : '#f7f7f7';
+  });
 }
 themeButton.addEventListener('click', () => {
   root.classList.add('theme-changing');
@@ -127,4 +130,17 @@ document.addEventListener('click', async (event) => {
   } catch (error) {
     console.error('Không mở được ảnh xem trước:', error);
   }
+});
+
+// Keep the compact navigation usable with a keyboard as well as touch.
+document.querySelector('.bottom-nav').addEventListener('keydown', (event) => {
+  const index = navButtons.indexOf(event.target);
+  if (index < 0) return;
+  const next = event.key === 'ArrowRight' ? (index + 1) % navButtons.length
+    : event.key === 'ArrowLeft' ? (index + navButtons.length - 1) % navButtons.length
+    : event.key === 'Home' ? 0 : event.key === 'End' ? navButtons.length - 1 : -1;
+  if (next < 0) return;
+  event.preventDefault();
+  navButtons[next].focus();
+  navButtons[next].click();
 });
