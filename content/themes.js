@@ -20,7 +20,7 @@ export default [
   },
     
   {
-    name: " Cài việt hoá OS4(không mtz)",
+    name: " Cài việt hoá OS4(không lỗi, không bị reset)",
     support: "Giá: 50k",
     mode: " IB ZL: 0876006982",
     thumbnail: "assets/dtinh.webp",
