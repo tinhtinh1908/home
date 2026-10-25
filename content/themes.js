@@ -25,9 +25,10 @@ export default [
     mode: " IB ZL: 0876006982",
     thumbnail: "assets/dtinh.webp",
   },
-{
-    name: " Cài việt hoá Mipad các dòng",
-    support: "Giá: 60k",
+    
+  {
+    name: "DTTOOL auto setup Xiaomi",
+    support: "Giá: -k",
     mode: " IB ZL: 0876006982",
     thumbnail: "assets/dtinh.webp",
   },
