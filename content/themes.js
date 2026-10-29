@@ -27,10 +27,16 @@ export default [
   },
     
   {
-    name: "DTTOOL auto setup Xiaomi",
+    name: "DTTOOL(PC)",
     support: "Giá: -k",
     mode: " IB ZL: 0876006982",
     thumbnail: "assets/dtinh.webp",
+    previewImages: [
+      "dt/1.webp",
+      "dt/2.webp",
+      "dt/3.webp",
+      "dt/4.webp"
+    ]
   },
 
     {
