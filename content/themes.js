@@ -28,7 +28,7 @@ export default [
     
   {
     name: "DTTOOL(PC)",
-    support: "Giá: -k",
+    support: "Giá: 150k(1 máy)",
     mode: " IB ZL: 0876006982",
     thumbnail: "assets/dtinh.webp",
     previewImages: [
