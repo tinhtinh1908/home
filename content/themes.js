@@ -31,6 +31,7 @@ export default [
     support: "Giá: 150k(1 máy)",
     mode: " IB ZL: 0876006982",
     thumbnail: "assets/dtinh.webp",
+    guideUrl: "https://zalo.me/0876006982",
     previewImages: [
       "dt/1.webp",
       "dt/2.webp",
