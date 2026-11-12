@@ -3,18 +3,18 @@
 export default [
     {
     name: "Hoang Sa",
-    support: "HyperOS 3(Đang update)",
+    support: "HyperOS 4(Sắp ra mắt)",
     mode: "Chế độ sáng/tối",
-    version: "H1.0",
+    version: "2.0",
     thumbnail: "assets/hoangsa.webp",
     themeCode: "ZjRiYWE5MzMtZTE1My00ZWNhLWE4ZjktYTI4OWQ2YTViYzMx"
   },
   
   {
     name: "Truong Sa (Âm lịch)",
-    support: "HyperOS 3(Đang update)",
+    support: "HyperOS 4(Sắp ra mắt)",
     mode: "Chế độ sáng/tối",
-    version: "T1.0",
+    version: "T2.0",
     thumbnail: "assets/truongsa.webp",
     themeCode: "MGI3YTFmMGItNTI3Yy00Y2RjLTg3MTQtYTA3N2U0MGMxZDMw"
   },
