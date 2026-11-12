@@ -2,6 +2,10 @@
 // Mỗi bản hiện có một nội dung: sửa trực tiếp title, description, color.
 export default [
   {
+    date: "12 tháng 11, 2026",
+    description: "Việt hóa OS4 chính thức .... Sắp ra mắt."
+  },
+  {
     date: "20 tháng 10, 2026",
     description: " Đã fix os 4 việt hoá "
   },
