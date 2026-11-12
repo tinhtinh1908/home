@@ -5,6 +5,7 @@ export default {
   preview: "Xem trước",
   download: "Tải",
   openThemeApp: "Mở Chủ đề",
+  contact: "Liên hệ",
   loadingDownloads: "Đang lấy lượt tải...",
   downloads: "lượt tải",
   currentVersion: "Phiên bản hiện tại",
