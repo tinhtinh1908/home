@@ -1,5 +1,5 @@
 import content from './content.js?v=__BUILD__';
-import {getThemeId, escapeHtml} from './utils.js?v=__BUILD__';
+import {getThemeId, escapeHtml, contactUrl} from './utils.js?v=__BUILD__';
 const ui = content.ui || {};
 const releaseRequests = new Map();
 const countFormatter = new Intl.NumberFormat('vi-VN');
@@ -23,6 +23,11 @@ function renderThemeButton(theme, themeIndex) {
 
   if (theme.downloadCode) {
     return `<button class="download-button" type="button" data-download-theme="${themeIndex}" aria-label="Tải xuống ${escapeHtml(theme.name)}">${escapeHtml(ui.download || 'Tải về')}</button>`;
+  }
+
+  const contact = contactUrl(theme.guideUrl || '');
+  if (contact) {
+    return `<a class="download-button" href="${escapeHtml(contact)}" target="_blank" rel="noopener noreferrer" aria-label="Liên hệ ${escapeHtml(theme.name)}">${escapeHtml(ui.contact || 'Liên hệ')}</a>`;
   }
 
   return '';
