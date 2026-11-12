@@ -18,17 +18,10 @@ export default [
     thumbnail: "assets/truongsa.webp",
     themeCode: "MGI3YTFmMGItNTI3Yy00Y2RjLTg3MTQtYTA3N2U0MGMxZDMw"
   },
-    
-  {
-    name: " Cài việt hoá OS4(không lỗi, không bị reset)",
-    support: "Giá: 50k",
-    mode: " IB ZL: 0876006982",
-    thumbnail: "assets/dtinh.webp",
-  },
-    
+
   {
     name: "DTTOOL(PC)",
-    support: "Giá: 150k(1 máy)",
+    support: "Giá: 150k(vĩnh viễn)",
     mode: " IB ZL: 0876006982",
     thumbnail: "assets/dtinh.webp",
     guideUrl: "https://zalo.me/0876006982",
@@ -36,7 +29,9 @@ export default [
       "dt/1.webp",
       "dt/2.webp",
       "dt/3.webp",
-      "dt/4.webp"
+      "dt/4.webp",
+      "dt/5.webp",
+      "dt/6.webp"
     ]
   },
 
