@@ -21,7 +21,7 @@ export default [
 
   {
     name: "DTTOOL(PC)",
-    support: "Giá: 150k(vĩnh viễn)",
+    support: "Giá: 150k(1PC) 100k(từ 3PC)",
     mode: " IB ZL: 0876006982",
     thumbnail: "assets/dtinh.webp",
     downloadUrl: "https://drive.google.com/file/d/1-_RhCE27O-R_Dc5nHU7YBXlyCCFwgxZu/view?usp=drive_link",
