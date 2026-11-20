@@ -39,7 +39,7 @@ export default [
     support: "Giá: 150k",
     mode: " IB ZL: 0876006982",
     thumbnail: "assets/dtinh.webp",
-    downloadUrl: "https://drive.google.com/file/d/1-_RhCE27O-R_Dc5nHU7YBXlyCCFwgxZu/view?usp=drive_link",
+    downloadUrl: "https://drive.google.com/file/d/1YW3NOXhpuv-U2qvZloa_EhNRIbfDGphg/view?usp=sharing",
     previewImages: [
       "dt/1.webp",
       "dt/2.webp",
