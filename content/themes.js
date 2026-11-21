@@ -5,6 +5,15 @@ export default [
     name: "Viethoa",
     support: "HyperOS 4(Sắp ra mắt)",
     },
+    {
+    name: "Viethoa",
+    support: "HyperOS 3(Sắp ra mắt)",
+    },
+    {
+    name: "Viethoa",
+    support: "HyperOS 2(Sắp ra mắt)",
+    },
+        
 
   {
     name: "DTTOOL(PC)",
@@ -56,15 +65,6 @@ export default [
     support: "Nhận thông báo qua MicroG-RE",
     mark: "G",
     guideUrl: "huongdan.html"
-  },
-
-  {
-    name: "Snow Viet",
-    support: "HyperOS 3",
-    mode: "Chế độ sáng/tối",
-    version: "1.0",
-    thumbnail: "assets/snowviet.webp",
-    themeCode: "Y2ZkNzg5NjktNDFjNy00YzY5LTk4YjctZjQwNzJjNjIwZjNh"
   },
 
   {
