@@ -2,22 +2,9 @@
 // themeCode và downloadCode giữ dạng Base64. previewImages là danh sách ảnh xem trước.
 export default [
     {
-    name: "Hoang Sa",
+    name: "Viethoa",
     support: "HyperOS 4(Sắp ra mắt)",
-    mode: "Chế độ sáng/tối",
-    version: "2.0",
-    thumbnail: "assets/hoangsa.webp",
-    themeCode: "ZjRiYWE5MzMtZTE1My00ZWNhLWE4ZjktYTI4OWQ2YTViYzMx"
-  },
-  
-  {
-    name: "Truong Sa (Âm lịch)",
-    support: "HyperOS 4(Sắp ra mắt)",
-    mode: "Chế độ sáng/tối",
-    version: "T2.0",
-    thumbnail: "assets/truongsa.webp",
-    themeCode: "MGI3YTFmMGItNTI3Yy00Y2RjLTg3MTQtYTA3N2U0MGMxZDMw"
-  },
+    },
 
   {
     name: "DTTOOL(PC)",
