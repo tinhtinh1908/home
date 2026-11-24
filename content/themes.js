@@ -17,10 +17,10 @@ export default [
 
   {
     name: "DTTOOL(PC)",
-    support: "Giá: 150k(1PC) 100k(từ 3PC)",
+    support: "Giá: 150k",
     mode: " IB ZL: 0876006982",
     thumbnail: "assets/dtinh.webp",
-    downloadUrl: "https://drive.google.com/file/d/1-_RhCE27O-R_Dc5nHU7YBXlyCCFwgxZu/view?usp=drive_link",
+    downloadUrl: "https://drive.google.com/file/d/1t6fkWSZSDPzlDojeFpW2pwOqtd-yl5L9/view?usp=sharing",
     previewImages: [
       "dt/1.webp",
       "dt/2.webp",
