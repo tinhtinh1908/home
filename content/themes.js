@@ -17,7 +17,7 @@ export default [
 
   {
     name: "DTTOOL(PC)",
-    support: "Giá: 150k/tháng, 300k/không thời hạn",
+    support: "Giá: 150k/tháng, 300k/không thời hạn, 400/không thời hạn + bản lite",
     mode: " IB ZL: 0876006982",
     thumbnail: "assets/dtinh.webp",
     downloadUrl: "https://drive.google.com/file/d/1t6fkWSZSDPzlDojeFpW2pwOqtd-yl5L9/view?usp=sharing",
@@ -30,22 +30,6 @@ export default [
       "dt/6.webp"
     ]
   },
-  {
-    name: "DTTOOL LITE(PC cài từ xa)",
-    support: "Giá: 150k",
-    mode: " IB ZL: 0876006982",
-    thumbnail: "assets/dtinh.webp",
-    downloadUrl: "https://drive.google.com/file/d/1YW3NOXhpuv-U2qvZloa_EhNRIbfDGphg/view?usp=sharing",
-    previewImages: [
-      "dt/1.webp",
-      "dt/2.webp",
-      "dt/3.webp",
-      "dt/4.webp",
-      "dt/5.webp",
-      "dt/6.webp"
-    ]
-  },
-
     {
     name: "Âm lịch Việt Nam",
     support: "Tất cả thiết bị",
