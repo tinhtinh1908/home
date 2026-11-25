@@ -6,8 +6,9 @@ export default [
     support: "HyperOS 4(Sắp ra mắt)",
     },
     {
-    name: "Viethoa",
-    support: "HyperOS 3(Sắp ra mắt)",
+    name: "Viet Hoa 3",
+    support: "HyperOS 3",
+    version: "1.0"
     },
     {
     name: "Viethoa",
