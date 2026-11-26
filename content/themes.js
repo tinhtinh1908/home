@@ -18,7 +18,8 @@ export default [
 
   {
     name: "DTTOOL(PC)",
-    support: "Giá: 150k/tháng, 300k/không thời hạn, 400/không thời hạn + bản lite",
+    version: "1.3.1",
+    support: "Hỗ trợ OS2, OS3, OS4",
     mode: " IB ZL: 0876006982",
     thumbnail: "assets/dtinh.webp",
     downloadUrl: "https://drive.google.com/file/d/1t6fkWSZSDPzlDojeFpW2pwOqtd-yl5L9/view?usp=sharing",
