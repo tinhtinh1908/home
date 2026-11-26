@@ -35,7 +35,7 @@ export default [
     {
     name: "Âm lịch Việt Nam",
     support: "Tất cả thiết bị",
-    version: "2.5",
+    version: "2.7",
     thumbnail: "assets/lich.webp",
     downloadCode: "aHR0cHM6Ly9naXRodWIuY29tL3Rpbmh0aW5oMTkwOC9BbWxpY2gvcmVsZWFzZXMvbGF0ZXN0L2Rvd25sb2FkL0FtbGljaC5hcGs=",
     previewImages: [
