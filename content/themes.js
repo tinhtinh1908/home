@@ -2,8 +2,9 @@
 // themeCode và downloadCode giữ dạng Base64. previewImages là danh sách ảnh xem trước.
 export default [
     {
-    name: "Viethoa",
-    support: "HyperOS 4(Sắp ra mắt)",
+    name: "Viethoa4",
+    support: "HyperOS 4",
+    version:"1.0"
     },
     {
     name: "Viet Hoa 3",
