@@ -4,12 +4,14 @@ export default [
     {
     name: "Viethoa4",
     support: "HyperOS 4",
-    version:"1.0"
+    version:"1.0",
+    themeCode: "YjhiODAxOTEtOWI4NC00M2NlLWEwYjMtYmUwZThkMGJjOWYz"
     },
     {
     name: "Viet Hoa 3",
     support: "HyperOS 3",
-    version: "1.0"
+    version: "1.0",
+    themeCode: "NjQ3ZTE5NDgtNjk4NS00ZDc2LThmZjYtMDI4NDI2NGNhMmYy"
     },
     {
     name: "Viethoa",
